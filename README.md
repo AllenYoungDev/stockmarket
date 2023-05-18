@@ -1,7 +1,7 @@
 # Allen Young's Stockmarket
 An online private-stockmarket web app for demonstrating Allen Young's frontend, backend, and full-stack web app development and deployment skills.
 
-This is a small full-stack web app that enables purchasing one or more private shares of a company online.
+This is a small full-stack web app that enables purchasing online one or more private shares of a company.
 
 PayPal is used as a payment processor.
 
