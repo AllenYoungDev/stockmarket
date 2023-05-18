@@ -29,6 +29,10 @@ Because the primary purpose of this web app is demonstrating Allen Young's web a
 	- Nest.js
 	- Next.js
 	- Roda
+	- C# .NET Core
+	- Java Spring Boot
+	- Kotlin Spring Boot
+	- Kotlin Ktor
 - Full-stack implementations
 	- Django
 	- Rails
