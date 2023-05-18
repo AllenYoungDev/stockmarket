@@ -5,7 +5,9 @@ This is a small full-stack web app that enables purchasing one or more private s
 
 PayPal is used as a payment processor.
 
-Because the primary purpose of this web app is demonstrating Allen Young's web app development skills and know-how, the same features of this web app are implemented with multiple web-app development libraries, frameworks, and tools, as in the following.  That is, this web app has multiple implementations using different software frameworks, libraries, and tools for demonstrating Allen Young's web app software development skills and know-how.
+Because the primary purpose of this web app is demonstrating Allen Young's web app development skills and know-how, this web app is implemented in different editions with different web-app development libraries, frameworks, and tools; that is, this web app has multiple implementations using different software frameworks, libraries, and tools for demonstrating Allen Young's web app software development skills and know-how.
+
+The different editions of this web app are implemented with the following.
 
 - Database management systems
 	- SQLite3
