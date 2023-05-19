@@ -1,4 +1,4 @@
-# Allen Young's Stockmarket
+# Allen Young's Stockmarket Demo
 An online private-stockmarket web app for demonstrating Allen Young's frontend, backend, and full-stack web app development and deployment skills.
 
 This is a small full-stack web app that enables purchasing online one or more private shares of a company.
