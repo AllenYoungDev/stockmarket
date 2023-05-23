@@ -1,0 +1,587 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo login page 1`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+    </div>
+  </div>,
+  <section
+    className="login-controls-section"
+  >
+    <h1
+      className="login-controls-section-heading"
+    >
+      Login
+    </h1>
+    <form
+      className="login-form"
+    >
+      <div
+        className="login-form-div-grid"
+      >
+        <label
+          className="login-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="login-form-input-email-address"
+          id="emailaddress"
+          name="emailaddress"
+          placeholder="Email address"
+          size="20"
+          type="text"
+        />
+        <label
+          className="login-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="login-form-input-password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          size="20"
+          type="password"
+        />
+        <p
+          className="login-form-password-show-hide"
+        >
+          <a
+            href=""
+            onClick={[Function]}
+            style={
+              {
+                "color": "rgb(255,255,255)",
+                "textDecoration": "none",
+              }
+            }
+          >
+            show
+          </a>
+        </p>
+      </div>
+      <div
+        className="login-form-div-login-button"
+      >
+        <p
+          className="login-form-error-notice"
+        />
+        <input
+          className="login-form-input-login-button"
+          onClick={[Function]}
+          type="button"
+          value="Login"
+        />
+      </div>
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo login page 2`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+    </div>
+  </div>,
+  <section
+    className="login-controls-section"
+  >
+    <h1
+      className="login-controls-section-heading"
+    >
+      Login
+    </h1>
+    <form
+      className="login-form"
+    >
+      <div
+        className="login-form-div-grid"
+      >
+        <label
+          className="login-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="login-form-input-email-address"
+          disabled={true}
+          id="emailaddress"
+          name="emailaddress"
+          placeholder="Email address"
+          size="20"
+          type="text"
+        />
+        <label
+          className="login-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="login-form-input-password"
+          disabled={true}
+          id="password"
+          name="password"
+          placeholder="Password"
+          size="20"
+          type="password"
+        />
+      </div>
+      <div
+        className="login-form-div-login-button"
+      >
+        <p
+          className="login-form-error-notice"
+        />
+        <input
+          className="login-form-input-login-button"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+          value="Login"
+        />
+      </div>
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo login page 3`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+    </div>
+  </div>,
+  <section
+    className="login-controls-section"
+  >
+    <h1
+      className="login-controls-section-heading"
+    >
+      Login
+    </h1>
+    <form
+      className="login-form"
+    >
+      <div
+        className="login-form-div-grid"
+      >
+        <label
+          className="login-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="login-form-input-email-address"
+          disabled={true}
+          id="emailaddress"
+          name="emailaddress"
+          placeholder="Email address"
+          size="20"
+          type="text"
+        />
+        <label
+          className="login-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="login-form-input-password"
+          disabled={true}
+          id="password"
+          name="password"
+          placeholder="Password"
+          size="20"
+          type="password"
+        />
+      </div>
+      <div
+        className="login-form-div-login-button"
+      >
+        <p
+          className="login-form-error-notice"
+        />
+        <input
+          className="login-form-input-login-button"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+          value="Login"
+        />
+      </div>
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo login page 4`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+    </div>
+  </div>,
+  <section
+    className="login-controls-section"
+  >
+    <h1
+      className="login-controls-section-heading"
+    >
+      Login
+    </h1>
+    <form
+      className="login-form"
+    >
+      <div
+        className="login-form-div-grid"
+      >
+        <label
+          className="login-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="login-form-input-email-address"
+          id="emailaddress"
+          name="emailaddress"
+          placeholder="Email address"
+          size="20"
+          type="text"
+        />
+        <label
+          className="login-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="login-form-input-password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          size="20"
+          type="password"
+        />
+        <p
+          className="login-form-password-show-hide"
+        >
+          <a
+            href=""
+            onClick={[Function]}
+            style={
+              {
+                "color": "rgb(255,255,255)",
+                "textDecoration": "none",
+              }
+            }
+          >
+            show
+          </a>
+        </p>
+      </div>
+      <div
+        className="login-form-div-login-button"
+      >
+        <p
+          className="login-form-error-notice"
+        />
+        <input
+          className="login-form-input-login-button"
+          onClick={[Function]}
+          type="button"
+          value="Login"
+        />
+      </div>
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;

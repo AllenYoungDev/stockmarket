@@ -1,0 +1,5 @@
+AWS Fargate blue/green deployment
+Microsoft Azure deployment
+Google Cloud deployment
+Oracle Cloud deployment
+IBM Cloud deployment

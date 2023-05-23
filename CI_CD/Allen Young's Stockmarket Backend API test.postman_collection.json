@@ -1,0 +1,855 @@
+{
+	"info": {
+		"_postman_id": "df8d3286-02db-417f-9ca5-2aa1883db6ae",
+		"name": "Allen Young's Stockmarket Backend API test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26766166"
+	},
+	"item": [
+		{
+			"name": "CheckAccessTokenValidity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.be.error;\r",
+							"    pm.expect(pm.response.code).to.equal(401);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be 'invalid'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.equal('invalid');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken=1111-1111-1111-1111",
+						"description": "Invalid, fake access token in cookie for testing.",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/CheckAccessTokenValidity",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"CheckAccessTokenValidity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCompanyStockData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response message check\", function () {\r",
+							"  pm.response.to.not.have.jsonBody([7000000,70000,24500,24500,3500,100,350000]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8888/GetCompanyStockData",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetCompanyStockData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNumberOfCompanySharesOwnedByUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.be.error;\r",
+							"    pm.expect(pm.response.code).to.equal(401);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be 'No accessToken cookie'\", function () {\r",
+							"  pm.response.to.not.have.jsonBody('No accessToken cookie');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "1111-1111-1111-1111",
+						"description": "Invalid, fake access token in cookie for testing.",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetNumberOfCompanySharesOwnedByUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetNumberOfCompanySharesOwnedByUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set('accessToken', pm.response.text());\r",
+							"\r",
+							"//console.log(`pm.collectionVariables.get('accessToken'):  ${pm.collectionVariables.get('accessToken')}`);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Allen\", \"lastName\": \"Young\", \"emailAddress\": \"allenyoung2004@gmail.com\", \"phoneNumber\": \"111-111-1111\", \"password\": \"12345abcde!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8888/RegisterUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"RegisterUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmailAddressVerificationSuccessPage/:accessToken",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains right email address\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"allenyoung2004@gmail.com\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8888/GetEmailAddressVerificationSuccessPage/{{accessToken}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetEmailAddressVerificationSuccessPage",
+						"{{accessToken}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ResetPassword",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains right email address\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"allenyoung2004@gmail.com\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"accessToken\": \"{{accessToken}}\", \"password\": \"12345abcde!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8888/ResetPassword",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"ResetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be 'success'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('success');\r",
+							"});\r",
+							"\r",
+							"console.log(`pm.response.headers:  ${JSON.stringify(pm.response.headers)}`);\r",
+							"const accessTokenSetCookieOjbectArray = pm.response.headers.filter(responseHeader => responseHeader.key == \"Set-Cookie\" && responseHeader.value.includes(\"accessToken\"));\r",
+							"console.log(`accessTokenSetCookieOjbectArray:  ${JSON.stringify(accessTokenSetCookieOjbectArray)}`);\r",
+							"\r",
+							"pm.test(\"Set-Cookie HTTP response header check\", function () {\r",
+							"  pm.expect(accessTokenSetCookieOjbectArray.length).to.equal(1);\r",
+							"});\r",
+							"\r",
+							"const accessTokenSetCookieOjbect = accessTokenSetCookieOjbectArray[0];\r",
+							"pm.collectionVariables.set('accessToken', accessTokenSetCookieOjbect.value.substring(12, 48));\r",
+							"console.log(`pm.collectionVariables.get('accessToken'):  ${pm.collectionVariables.get('accessToken')}`);\r",
+							"//pm.cookies.clear(); //this doesn't work.\r",
+							"const cookieJar = pm.cookies.jar();\r",
+							"cookieJar.getAll('https://localhost:8888', (error, cookies) => {\r",
+							"    console.log(`cookieJar.getAll() error before cookies deletion:  ${error}`);\r",
+							"    console.log(`cookieJar.getAll() before cookies deletion:  ${cookies}`);\r",
+							"    });\r",
+							"cookieJar.clear(\"https://localhost:8888\", (error) => {\r",
+							"    console.log(`cookieJar.clear() error:  ${error}`);\r",
+							"    cookieJar.getAll('https://localhost:8888', (error, cookies) => {\r",
+							"        console.log(`cookieJar.getAll() error after cookies deletion:  ${error}`);\r",
+							"        console.log(`cookieJar.getAll() after cookies deletion:  ${cookies}`);\r",
+							"        });    \r",
+							"    });\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"emailAddress\": \"allenyoung2004@gmail.com\", \"password\": \"12345abcde!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8888/Login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be 'success'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('success');\r",
+							"});\r",
+							"\r",
+							"console.log(`pm.response.headers:  ${JSON.stringify(pm.response.headers)}`);\r",
+							"const accessTokenSetCookieOjbectArray = pm.response.headers.filter(responseHeader => responseHeader.key == \"Set-Cookie\" && responseHeader.value.includes(\"accessToken=;\"));\r",
+							"console.log(`accessTokenSetCookieOjbectArray:  ${JSON.stringify(accessTokenSetCookieOjbectArray)}`);\r",
+							"\r",
+							"pm.test(\"Set-Cookie HTTP response header check\", function () {\r",
+							"  pm.expect(accessTokenSetCookieOjbectArray.length).to.equal(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8888/Logout",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"Logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckAccessTokenValidity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be 'valid'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('valid');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken={{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/CheckAccessTokenValidity",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"CheckAccessTokenValidity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNumberOfCompanySharesOwnedByUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be '0'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('0');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken={{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetNumberOfCompanySharesOwnedByUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetNumberOfCompanySharesOwnedByUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserAccountSettings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message check\", function () {\r",
+							"  pm.expect(pm.response.json()).to.deep.equal({\"userFirstName\":\"Allen\",\"userLastName\":\"Young\",\"userEmailAddress\":\"allenyoung2004@gmail.com\",\"userPhoneNumber\":\"111-111-1111\"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken={{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetUserAccountSettings",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetUserAccountSettings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserAccountSettings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be 'success'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('success');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken={{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Allen\", \"lastName\": \"Young\", \"emailAddress\": \"allenyoung2004@gmail.com\", \"phoneNumber\": \"111-111-1111\", \"password\": \"12345abcde!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8888/UpdateUserAccountSettings",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"UpdateUserAccountSettings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNumberOfUserStockTransactions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be '0'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('0');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken={{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetNumberOfUserStockTransactions",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetNumberOfUserStockTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserStockTransactionHistory/:pageNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message check\", function () {\r",
+							"  pm.expect(pm.response.json()).to.deep.equal([]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken={{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetUserStockTransactionHistory/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetUserStockTransactionHistory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalNumberOfUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be '2'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('2');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken=12345abcd",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetTotalNumberOfUsers",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetTotalNumberOfUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserList/:pageNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message check\", function () {\r",
+							"  pm.expect(pm.response.json()).to.deep.equal([{\"ID\":1,\"First name\":\"Allen\",\"Last name\":\"Young\",\"Email address\":\"admin@allenyoung.dev\",\"Email address verified\":\"true\",\"Phone number\":\"123-456-7890\",\"Admin\":\"true\",\"User deleted\":\"false\"},{\"ID\":2,\"First name\":\"Allen\",\"Last name\":\"Young\",\"Email address\":\"allenyoung2004@gmail.com\",\"Email address verified\":\"true\",\"Phone number\":\"111-111-1111\",\"Admin\":\"false\",\"User deleted\":\"false\"}]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken=12345abcd",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetUserList/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetUserList",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalNumberOfTransactions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message should be '0'\", function () {\r",
+							"  pm.expect(pm.response.text()).to.equal('0');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken=12345abcd",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetTotalNumberOfTransactions",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetTotalNumberOfTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTransactionHistory/:pageNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.be.success;\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response message check\", function () {\r",
+							"  pm.expect(pm.response.json()).to.deep.equal([]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "accessToken=12345abcd",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8888/GetTransactionHistory/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetTransactionHistory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken",
+			"value": ""
+		}
+	]
+}

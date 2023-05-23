@@ -1,0 +1,1 @@
+window.dbMaximumNumberOfRowsReturned = 25;

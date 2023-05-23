@@ -1,0 +1,27 @@
+{
+  "name": "@allenyoungdev/stockmarket",
+  "version": "1.0.0",
+  "description": "## Instructions",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Allen Young",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.259.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "node-fetch": "^3.2.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3"
+  }
+}

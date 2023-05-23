@@ -1,0 +1,1912 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo homepage 1`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      Allen Young's Stockmarket Demo
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+       | 
+      <a
+        href="http://localhost/login.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Login
+      </a>
+    </div>
+  </div>,
+  <section>
+    <h1
+      className="page-heading"
+    >
+      Allen Young's Stockmarket Demo
+    </h1>
+    <div
+      className="page-heading-section"
+    >
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        For demonstrating Allen Young's frontend, backend, and full-stack web app development skills
+      </p>
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        About 
+        <a
+          href="https://AllenYoung.dev"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          AllenYoung.dev
+        </a>
+      </p>
+    </div>
+    <div
+      className="company-stock-stats-subsection"
+    >
+      <div>
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Current Company valuation:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+        <br />
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Number of authorized Company shares:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+        <br />
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Number of issued Company shares:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Number of outstanding Company shares:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+        <br />
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Number of Company shares available for purchase:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Price per share:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+        <p
+          className="company-stock-stats-subsection-paragraph"
+        >
+          Cash value of the shares available for purchase:  
+          <span
+            style={
+              {
+                "opacity": 0.6,
+              }
+            }
+          >
+            (Inquiring)
+          </span>
+        </p>
+      </div>
+    </div>
+    <div
+      className="login-or-register-subsection"
+    >
+      <a
+        href="http://localhost/login.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+          }
+        }
+      >
+        Login
+      </a>
+       or 
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+          }
+        }
+      >
+        register
+      </a>
+       to buy Company stocks
+    </div>
+    <div
+      className="number-of-company-shares-i-own-subsection"
+    >
+      <div
+        style={
+          {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <p
+          style={
+            {
+              "marginBottom": 0,
+            }
+          }
+        >
+          Number of Company shares I own:
+        </p>
+        <p
+          style={
+            {
+              "marginTop": 0,
+            }
+          }
+        >
+          (% of the authorized Company shares)
+        </p>
+      </div>
+    </div>
+    <div
+      className="share-purchase-form-subsection"
+    >
+      <div
+        style={
+          {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <form
+          className="share-purchase-form"
+          style={
+            {
+              "margin": 0,
+            }
+          }
+        >
+          <label
+            className="share-purchase-form-label"
+            htmlFor="number_of_shares_to_buy"
+          >
+            Number of Company shares to buy:
+          </label>
+          <input
+            className="share-purchase-form-input"
+            disabled={true}
+            id="number_of_shares_to_buy"
+            min="1"
+            name="numberOfSharesToBuy"
+            onInput={[Function]}
+            size="5"
+            step="1"
+            type="number"
+          />
+          <br />
+          <p
+            className="share-purchase-form-paragraph"
+            style={
+              {
+                "margin": 0,
+              }
+            }
+          >
+            Price of Company shares to buy:
+          </p>
+          <p
+            className="proceed-to-checkout-error-notice"
+          />
+          <input
+            className="proceed-to-checkout-button-input"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+            value="Proceed to checkout"
+          />
+        </form>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="faq-section"
+  >
+    <h2
+      className="faq-section-h2"
+    >
+      FAQ
+    </h2>
+    <h3
+      className="faq-section-h3"
+      style={
+        {
+          "marginTop": "0%",
+        }
+      }
+    >
+      What's the current Company ownership structure?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Can I return my purchased Company share(s) and get a refund?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      What the Company share liquidation plan?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Shares outstanding vs. Treasury stock vs. Issued shares vs. Authorized capital vs. Unissued shares
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Company stock liquidation options (current and post-IPO)
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Investor risk warning
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Terms and conditions
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Fees
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      About Company
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <p
+      className="faq-section-p"
+      style={
+        {
+          "marginBottom": 0,
+          "paddingBottom": "1%",
+        }
+      }
+    >
+      For inquiries and support requests, please send an email to 
+      <a
+        href="mailto:support@allenyoung.dev"
+      >
+        support@allenyoung.dev
+      </a>
+      .
+    </p>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo homepage 2`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      Allen Young's Stockmarket Demo
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+       | 
+      <a
+        href="http://localhost/login.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Login
+      </a>
+    </div>
+  </div>,
+  <section>
+    <h1
+      className="page-heading"
+    >
+      Allen Young's Stockmarket Demo
+    </h1>
+    <div
+      className="page-heading-section"
+    >
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        For demonstrating Allen Young's frontend, backend, and full-stack web app development skills
+      </p>
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        About 
+        <a
+          href="https://AllenYoung.dev"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          AllenYoung.dev
+        </a>
+      </p>
+    </div>
+    <div
+      className="company-stock-stats-subsection"
+    >
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Current Company valuation:  US$
+        7,000,000
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of authorized Company shares:  
+        70,000
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of issued Company shares:  
+        24,501
+         (
+        35.00142857142857
+        % of total)
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of outstanding Company shares:  
+        24,501
+         (
+        35.00142857142857
+        % of total)
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of Company shares available for purchase: 
+        3,499
+         (
+        4.998571428571428
+        % of total)
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Price per share:  US$
+        100
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Cash value of the shares available for purchase:  US$
+        349,900
+      </p>
+    </div>
+    <div
+      className="login-or-register-subsection"
+    >
+      <a
+        href="http://localhost/login.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+          }
+        }
+      >
+        Login
+      </a>
+       or 
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+          }
+        }
+      >
+        register
+      </a>
+       to buy Company stocks
+    </div>
+    <div
+      className="number-of-company-shares-i-own-subsection"
+    >
+      <div>
+        <p
+          style={
+            {
+              "marginBottom": 0,
+            }
+          }
+        >
+          Number of Company shares I own:  
+          1121
+        </p>
+        <p
+          style={
+            {
+              "marginTop": 0,
+            }
+          }
+        >
+          (
+          1.6014285714285714
+          % of the authorized Company shares)
+        </p>
+      </div>
+    </div>
+    <div
+      className="share-purchase-form-subsection"
+    >
+      <div
+        style={
+          {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <form
+          className="share-purchase-form"
+          style={
+            {
+              "margin": 0,
+            }
+          }
+        >
+          <label
+            className="share-purchase-form-label"
+            htmlFor="number_of_shares_to_buy"
+          >
+            Number of Company shares to buy:
+          </label>
+          <input
+            className="share-purchase-form-input"
+            disabled={true}
+            id="number_of_shares_to_buy"
+            min="1"
+            name="numberOfSharesToBuy"
+            onInput={[Function]}
+            size="5"
+            step="1"
+            type="number"
+          />
+          <br />
+          <p
+            className="share-purchase-form-paragraph"
+            style={
+              {
+                "margin": 0,
+              }
+            }
+          >
+            Price of Company shares to buy:
+          </p>
+          <p
+            className="proceed-to-checkout-error-notice"
+          />
+          <input
+            className="proceed-to-checkout-button-input"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+            value="Proceed to checkout"
+          />
+        </form>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="faq-section"
+  >
+    <h2
+      className="faq-section-h2"
+    >
+      FAQ
+    </h2>
+    <h3
+      className="faq-section-h3"
+      style={
+        {
+          "marginTop": "0%",
+        }
+      }
+    >
+      What's the current Company ownership structure?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Can I return my purchased Company share(s) and get a refund?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      What the Company share liquidation plan?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Shares outstanding vs. Treasury stock vs. Issued shares vs. Authorized capital vs. Unissued shares
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Company stock liquidation options (current and post-IPO)
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Investor risk warning
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Terms and conditions
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Fees
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      About Company
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <p
+      className="faq-section-p"
+      style={
+        {
+          "marginBottom": 0,
+          "paddingBottom": "1%",
+        }
+      }
+    >
+      For inquiries and support requests, please send an email to 
+      <a
+        href="mailto:support@allenyoung.dev"
+      >
+        support@allenyoung.dev
+      </a>
+      .
+    </p>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo homepage 3`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      Allen Young's Stockmarket Demo
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/account.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        My Account
+      </a>
+       | 
+      <a
+        className="logout"
+        href=""
+        onClick={[Function]}
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Logout
+      </a>
+    </div>
+  </div>,
+  <section>
+    <h1
+      className="page-heading"
+    >
+      Allen Young's Stockmarket Demo
+    </h1>
+    <div
+      className="page-heading-section"
+    >
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        For demonstrating Allen Young's frontend, backend, and full-stack web app development skills
+      </p>
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        About 
+        <a
+          href="https://AllenYoung.dev"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          AllenYoung.dev
+        </a>
+      </p>
+    </div>
+    <div
+      className="company-stock-stats-subsection"
+    >
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Current Company valuation:  US$
+        7,000,000
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of authorized Company shares:  
+        70,000
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of issued Company shares:  
+        24,501
+         (
+        35.00142857142857
+        % of total)
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of outstanding Company shares:  
+        24,501
+         (
+        35.00142857142857
+        % of total)
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of Company shares available for purchase: 
+        3,499
+         (
+        4.998571428571428
+        % of total)
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Price per share:  US$
+        100
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Cash value of the shares available for purchase:  US$
+        349,900
+      </p>
+    </div>
+    <div
+      className="login-or-register-subsection"
+    />
+    <div
+      className="number-of-company-shares-i-own-subsection"
+    >
+      <div>
+        <p
+          style={
+            {
+              "marginBottom": 0,
+            }
+          }
+        >
+          Number of Company shares I own:  
+          1121
+        </p>
+        <p
+          style={
+            {
+              "marginTop": 0,
+            }
+          }
+        >
+          (
+          1.6014285714285714
+          % of the authorized Company shares)
+        </p>
+      </div>
+    </div>
+    <div
+      className="share-purchase-form-subsection"
+    >
+      <div>
+        <form
+          className="share-purchase-form"
+          style={
+            {
+              "margin": 0,
+            }
+          }
+        >
+          <label
+            className="share-purchase-form-label"
+            htmlFor="number_of_shares_to_buy"
+          >
+            Number of Company shares to buy:
+          </label>
+          <input
+            className="share-purchase-form-input"
+            id="number_of_shares_to_buy"
+            min="1"
+            name="numberOfSharesToBuy"
+            onInput={[Function]}
+            size="5"
+            step="1"
+            type="number"
+          />
+          <br />
+          <p
+            className="share-purchase-form-paragraph"
+            style={
+              {
+                "margin": 0,
+              }
+            }
+          >
+            Price of Company shares to buy:  
+          </p>
+          <p
+            className="proceed-to-checkout-error-notice"
+          />
+          <input
+            className="proceed-to-checkout-button-input"
+            onClick={[Function]}
+            type="button"
+            value="Proceed to checkout"
+          />
+        </form>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="faq-section"
+  >
+    <h2
+      className="faq-section-h2"
+    >
+      FAQ
+    </h2>
+    <h3
+      className="faq-section-h3"
+      style={
+        {
+          "marginTop": "0%",
+        }
+      }
+    >
+      What's the current Company ownership structure?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Can I return my purchased Company share(s) and get a refund?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      What the Company share liquidation plan?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Shares outstanding vs. Treasury stock vs. Issued shares vs. Authorized capital vs. Unissued shares
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Company stock liquidation options (current and post-IPO)
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Investor risk warning
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Terms and conditions
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Fees
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      About Company
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <p
+      className="faq-section-p"
+      style={
+        {
+          "marginBottom": 0,
+          "paddingBottom": "1%",
+        }
+      }
+    >
+      For inquiries and support requests, please send an email to 
+      <a
+        href="mailto:support@allenyoung.dev"
+      >
+        support@allenyoung.dev
+      </a>
+      .
+    </p>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo homepage 4`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      Allen Young's Stockmarket Demo
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/account.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        My Account
+      </a>
+       | 
+      <a
+        href="http://localhost/admin.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Admin
+      </a>
+       | 
+      <a
+        className="logout"
+        href=""
+        onClick={[Function]}
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Logout
+      </a>
+    </div>
+  </div>,
+  <section>
+    <h1
+      className="page-heading"
+    >
+      Allen Young's Stockmarket Demo
+    </h1>
+    <div
+      className="page-heading-section"
+    >
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        For demonstrating Allen Young's frontend, backend, and full-stack web app development skills
+      </p>
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        About 
+        <a
+          href="https://AllenYoung.dev"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          AllenYoung.dev
+        </a>
+      </p>
+    </div>
+    <div
+      className="company-stock-stats-subsection"
+    >
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Current Company valuation:  US$
+        7,000,000
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of authorized Company shares:  
+        70,000
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of issued Company shares:  
+        24,501
+         (
+        35.00142857142857
+        % of total)
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of outstanding Company shares:  
+        24,501
+         (
+        35.00142857142857
+        % of total)
+      </p>
+      <br />
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Number of Company shares available for purchase: 
+        3,499
+         (
+        4.998571428571428
+        % of total)
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Price per share:  US$
+        100
+      </p>
+      <p
+        className="company-stock-stats-subsection-paragraph"
+      >
+        Cash value of the shares available for purchase:  US$
+        349,900
+      </p>
+    </div>
+    <div
+      className="login-or-register-subsection"
+    />
+    <div
+      className="number-of-company-shares-i-own-subsection"
+    >
+      <div>
+        <p
+          style={
+            {
+              "marginBottom": 0,
+            }
+          }
+        >
+          Number of Company shares I own:  
+          1121
+        </p>
+        <p
+          style={
+            {
+              "marginTop": 0,
+            }
+          }
+        >
+          (
+          1.6014285714285714
+          % of the authorized Company shares)
+        </p>
+      </div>
+    </div>
+    <div
+      className="share-purchase-form-subsection"
+    >
+      <div
+        style={
+          {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <form
+          className="share-purchase-form"
+          style={
+            {
+              "margin": 0,
+            }
+          }
+        >
+          <label
+            className="share-purchase-form-label"
+            htmlFor="number_of_shares_to_buy"
+          >
+            Number of Company shares to buy:
+          </label>
+          <input
+            className="share-purchase-form-input"
+            disabled={true}
+            id="number_of_shares_to_buy"
+            min="1"
+            name="numberOfSharesToBuy"
+            onInput={[Function]}
+            size="5"
+            step="1"
+            type="number"
+          />
+          <br />
+          <p
+            className="share-purchase-form-paragraph"
+            style={
+              {
+                "margin": 0,
+              }
+            }
+          >
+            Price of Company shares to buy:
+          </p>
+          <p
+            className="proceed-to-checkout-error-notice"
+          />
+          <input
+            className="proceed-to-checkout-button-input"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+            value="Proceed to checkout"
+          />
+        </form>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="faq-section"
+  >
+    <h2
+      className="faq-section-h2"
+    >
+      FAQ
+    </h2>
+    <h3
+      className="faq-section-h3"
+      style={
+        {
+          "marginTop": "0%",
+        }
+      }
+    >
+      What's the current Company ownership structure?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Can I return my purchased Company share(s) and get a refund?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      What the Company share liquidation plan?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Shares outstanding vs. Treasury stock vs. Issued shares vs. Authorized capital vs. Unissued shares
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Company stock liquidation options (current and post-IPO)
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Investor risk warning
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Terms and conditions
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Fees
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      About Company
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <p
+      className="faq-section-p"
+      style={
+        {
+          "marginBottom": 0,
+          "paddingBottom": "1%",
+        }
+      }
+    >
+      For inquiries and support requests, please send an email to 
+      <a
+        href="mailto:support@allenyoung.dev"
+      >
+        support@allenyoung.dev
+      </a>
+      .
+    </p>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo homepage 5`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      Allen Young's Stockmarket Demo
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <div>
+        Network error.  Please retry later.
+      </div>
+    </div>
+  </div>,
+  <section>
+    <h1
+      className="page-heading"
+    >
+      Allen Young's Stockmarket Demo
+    </h1>
+    <div
+      className="page-heading-section"
+    >
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        For demonstrating Allen Young's frontend, backend, and full-stack web app development skills
+      </p>
+      <p
+        style={
+          {
+            "margin": 0,
+          }
+        }
+      >
+        About 
+        <a
+          href="https://AllenYoung.dev"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          AllenYoung.dev
+        </a>
+      </p>
+    </div>
+    <div
+      className="company-stock-stats-subsection"
+    >
+      <div>
+        Network error.  Please retry later.
+      </div>
+    </div>
+    <div
+      className="login-or-register-subsection"
+    >
+      Network error.  Please retry later.
+    </div>
+    <div
+      className="number-of-company-shares-i-own-subsection"
+    >
+      <div
+        style={
+          {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <p
+          style={
+            {
+              "marginBottom": 0,
+            }
+          }
+        >
+          Number of Company shares I own:
+        </p>
+        <p
+          style={
+            {
+              "marginTop": 0,
+            }
+          }
+        >
+          (% of the authorized Company shares)
+        </p>
+      </div>
+    </div>
+    <div
+      className="share-purchase-form-subsection"
+    >
+      Network error.  Please retry later.
+    </div>
+  </section>,
+  <section
+    className="faq-section"
+  >
+    <h2
+      className="faq-section-h2"
+    >
+      FAQ
+    </h2>
+    <h3
+      className="faq-section-h3"
+      style={
+        {
+          "marginTop": "0%",
+        }
+      }
+    >
+      What's the current Company ownership structure?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Can I return my purchased Company share(s) and get a refund?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      What the Company share liquidation plan?
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Shares outstanding vs. Treasury stock vs. Issued shares vs. Authorized capital vs. Unissued shares
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Company stock liquidation options (current and post-IPO)
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Investor risk warning
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Terms and conditions
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      Fees
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <h3
+      className="faq-section-h3"
+    >
+      About Company
+    </h3>
+    <p
+      className="faq-section-p"
+    >
+      ...
+    </p>
+    <p
+      className="faq-section-p"
+      style={
+        {
+          "marginBottom": 0,
+          "paddingBottom": "1%",
+        }
+      }
+    >
+      For inquiries and support requests, please send an email to 
+      <a
+        href="mailto:support@allenyoung.dev"
+      >
+        support@allenyoung.dev
+      </a>
+      .
+    </p>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;

@@ -1,0 +1,43 @@
+<head>
+<style>
+label:after { content: ':'; }
+</style>
+</head>
+<body style="margin: 0; background-color: #FFFFFF;color: rgb(250,250,250);">
+<div style="margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">
+Allen Young's Stockmarket Demo
+</div>
+
+<section style="margin: 0;background-color: #737CA1;color: rgb(250,250,250);">
+<h1 style="text-align: center; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0;">Allen Young's Stockmarket Demo<br>Account Registration</h1>
+
+<!-- React component below, AccountRegistrationForm -->
+<form class="settings" action="/action_page.php" style="margin: 1% 0% 0% 0%;">
+  <div style="display:grid; grid-template-columns: 20% 20% 10% 20% 30%; grid-gap:5px; font-size: 130%;font-family: arial;">
+  <label for="fname" style="grid-row: 1; grid-column: 1; text-align: right;">First name</label>
+  <input type="text" id="fname" name="fname" size="20" style="grid-row: 1; grid-column: 2;">
+  <label for="lname" style="grid-row: 1; grid-column: 3;text-align: right;">Last name</label>
+  <input type="text" id="lname" name="lname" size="20" style="grid-row: 1; grid-column: 4;">
+  <div style="margin: 2.5%;grid-row: 2; grid-column: 2;"></div>
+  <label for="emailaddress" style="grid-row: 3; grid-column: 1;text-align: right;">Email address</label>
+  <input type="text" id="emailaddress" name="emailaddress" size="20" style="grid-row: 3; grid-column: 2; grid-gap:15px;">  
+  <label for="phonenumber" style="grid-row: 4; grid-column: 1;text-align: right;">Phone number</label>
+  <input type="text" id="phonenumber" name="phonenumber" size="20" style="grid-row: 4; grid-column: 2;"> 
+  <div style="margin: 2.5%;grid-row: 5; grid-column: 2;"></div>
+  <label for="password" style="grid-row: 6; grid-column: 1;text-align: right;">Password</label>
+  <input type="text" id="password" name="password" size="20" style="grid-row: 6; grid-column: 2;">
+  <label for="passwordretype" style="grid-row: 7; grid-column: 1;text-align: right;">Password (Retype)</label>
+  <input type="text" id="passwordretype" name="passwordretype" size="20" style="grid-row: 7; grid-column: 2;">   
+  </div>
+
+  <p style="text-align: center; margin: 1% 0 0 0;font-size: 120%;">Password must be at least 10 characters, and must contain a letter, a number, and a special character from any of the following ~`!@#$%^&*-_+=|\/?;:"'<>,.{}[]().</p>
+  <p style="text-align: center; margin: 0.5% 0 0 0;font-size: 120%;">Your email address will be your login ID.</p>
+  <p style="text-align: center; margin: 0.5% 0 0 0;font-size: 120%;">After pressing the register button below, you'll receive an email-address verification email with a link that you must click to verify your email address.  You will not be able to log in before verifying your email address.</p>
+
+  <div style="text-align: center;">
+  <input type="submit" value="Register" style="margin: 1% 0 1.25% 0; padding: 0.5%; font-size: 150%; font-weight: 900; background-color: #2B547E; border-radius: 0px; color: rgb(250,250,250);">
+  </div>
+</form>
+</section>
+
+</body>

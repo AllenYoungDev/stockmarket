@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css"
+    />
+    <script
+      src="https://www.paypal.com/sdk/js?components=buttons,hosted-fields&client-id=<%= clientId %>&enable-funding=venmo,card,paylater"
+      data-client-token="<%= clientToken %>"
+    ></script>
+	<style>
+	h1 {
+	  color: #4B0082;margin-left: 1%; margin-right: 1%;
+	}
+	h2 {
+	  color: #4B0082;margin-left: 1%; margin-right: 1%;
+	}
+	h3 {
+	  color: #4B0082;margin-left: 1%; margin-right: 1%;
+	}	
+	p {
+	  color: #4B0082;margin-left: 1%; margin-right: 1%;
+	}
+	label {
+	  color: #4B0082;
+	}	
+	
+@media only screen and (orientation: landscape) {
+
+.multicolumn_section {
+display: flex;max-width:100%;}
+
+.overview_section_col1_product_image {
+flex: 1;max-width: 20%; margin-left: 1%;}
+.overview_section_col2 {
+flex: 1;text-align: left; }
+.overview_section_col2_book_images_div {
+display: flex; }
+.overview_section_col2_book_image {
+flex: 1;max-width: 15%;display: block; }
+
+.book_listing_section_row_div {
+display: flex; }
+.book_listing_section_row_image {
+flex: 1;max-width: 16%;height: 10%; margin-left: 1%;}
+.book_listing_section_text_div {
+flex: 1;width: 16%;margin-top: 0; }
+
+.centered_product_image {
+max-width: 25%;display: block;margin-left: auto;margin-right: auto;margin-top: 2%; }
+
+.payment_section {
+	}
+}
+
+@media only screen and (orientation: portrait) {
+
+.multicolumn_section {
+display: block; max-width:100%;}
+
+.overview_section_col1_product_image {
+width: 100%; }
+.overview_section_col2 {
+text-align: left; padding-left: 0; }
+.overview_section_col2_book_images_div {
+display:  none; }
+.overview_section_col2_book_image {
+display:  none; }
+
+.book_listing_section_row_div {
+display: block; }
+.book_listing_section_row_image {
+width: 100%; }
+.book_listing_section_text_div {
+width: 100%;margin-top: 0; padding-left: 0; padding-right: 0;margin-bottom: 5%; }
+
+.centered_product_image {
+width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
+
+.payment_section {
+	max-width:98%;margin-left: auto;margin-right: auto;padding-left: 0;padding-right:0;}
+}	
+	</style>	
+  </head>
+  <body style="max-width:100%; margin:0; padding:0;">
+	<noscript>
+		<!-- Navigation bar start -->
+		<div style="display:grid; grid-template-columns: 50% 50%; margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">
+			<p style="grid-row: 1; grid-column: 1;text-align: left;margin:0;"><a href="http://localhost" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a></p>
+			<!-- <p style="grid-row: 1; grid-column: 2;text-align: right;margin:0;">My account</p> -->
+		</div>
+		<!-- Navigation bar end -->
+
+
+		<!-- Checkout heading start -->
+		<h1 style="text-align: left; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0;">Checkout</h1>
+		<!-- Checkout heading end -->
+
+		<p>Checkout requires JavaScript enabled.</p>
+	</noscript>
+
+    <script>
+		if (String(window.performance.getEntriesByType("navigation")[0].type) === "back_forward") {
+			//window.location.reload()
+			window.location.href = 'http://localhost';
+		}
+
+		/*
+		let clientToken = document.getElementsByTagName('head')[0].getElementsByTagName('script')[0].getAttribute('data-client-token');
+		console.log(`checkout webpage clientToken:  ${clientToken}.`);
+
+		fetch(`https://localhost:8888/CheckClientToken/${clientToken}`, {method: "GET", credentials: 'include'})
+		.then((response) => response.text())
+		.then((text) => {
+			console.log(`checkout webpage /CheckClientToken/:clientToken response:  ${text}.`);
+			if (text === 'no record') {
+				//window.location.reload( true );
+			} else {
+				window.location.href = 'http://localhost';
+			}
+			})
+		.catch((err) => {
+			console.error(`/Checkout webpage:  /CheckClientToken/:clientToken fetch() network error.  ${err}`);
+			window.location.href = 'http://localhost';
+		});		
+		*/
+	</script>	
+
+
+	<!-- Navigation bar start -->
+	<div style="display:grid; grid-template-columns: 50% 50%; margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">
+		<p style="grid-row: 1; grid-column: 1;text-align: left;margin:0;"><a href="http://localhost" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a></p>
+		<p style="grid-row: 1; grid-column: 2;text-align: right;margin:0;"><a href="http://localhost/account.html" style="text-decoration: none; color: rgb(255,255,255);">My account</a></p>
+	</div>
+	<!-- Navigation bar end -->
+
+
+	<!-- Checkout heading start -->
+	<h1 style="text-align: left; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0;">Checkout</h1>
+	<!-- Checkout heading end -->
+
+
+	<!-- Checkout message section start -->
+    <script>
+		// The data/time we want to countdown to
+		var countDownDuration = 300000; //dbStockReservationTimeoutInMilliseconds
+		var countDownDate = Date.now() + countDownDuration;
+
+		// Run myfunc every second
+		var myfunc = setInterval(function() {
+	
+		var now = new Date().getTime();
+		var timeleft = countDownDate - now;
+			
+		// Calculating the days, hours, minutes and seconds left
+		var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+			
+		// Result is output to the specific element
+		document.getElementById("countdown_timer").innerHTML = 
+			`Time remaining on Company shares reservation for purchase:  ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds.`
+			
+		// Display the message when countdown is over
+		if (timeleft < 0) {
+			clearInterval(myfunc);
+			window.location.href = 'http://localhost';
+		}
+		}, 1000);
+	</script>
+
+	<p style="margin-bottom: 0.5%;"  id="countdown_timer">Time remaining on Company shares reservation for purchase:  </p>
+
+	<p>Total number of Company shares to buy:  <%= totalNumberOfSharesToBuy %></p>
+	<p style="margin-bottom: 0.5%;">Total price of Company shares to buy:  US$<%= totalPriceOfSharesToBuy %> (US$<%= pricePerShare %> per share plus <%= processingFeePercentage %>% processing fee)</p>
+
+	<p style="margin-bottom: 0.5%;">After you make the payment, you'll be taken to a receipt page and a receipt will be email to you.  The transaction record will be available in your account page.</p>	
+	<!-- Checkout message section end -->
+
+
+	<!-- PayPal checkout form start -->
+	<div id="paypal-button-container" class="paypal-button-container payment_section"></div>
+	<div class="card_container payment_section">
+	  <form id="card-form">
+		<label for="card-number">Card Number</label>
+		<div id="card-number" class="card_field"></div>
+		<div style="display: flex; flex-direction: row;">
+		  <div>
+			<label for="expiration-date">Expiration Date</label>
+			<div id="expiration-date" class="card_field"></div>
+		  </div>
+		  <div style="margin-left: 10px;">
+			<label for="cvv">CVV</label>
+			<div id="cvv" class="card_field"></div>
+		  </div>
+		</div>
+		<label for="card-holder-name">Name on Card</label>
+		<input
+		  type="text"
+		  id="card-holder-name"
+		  name="card-holder-name"
+		  autocomplete="off"
+		  placeholder="card holder name"
+		/>
+		<div>
+		  <label for="card-billing-address-street">Billing Address</label>
+		  <input
+			type="text"
+			id="card-billing-address-street"
+			name="card-billing-address-street"
+			autocomplete="off"
+			placeholder="street address"
+		  />
+		</div>
+		<div>
+		  <label for="card-billing-address-unit">&nbsp;</label>
+		  <input
+			type="text"
+			id="card-billing-address-unit"
+			name="card-billing-address-unit"
+			autocomplete="off"
+			placeholder="unit"
+		  />
+		</div>
+		<div>
+		  <input
+			type="text"
+			id="card-billing-address-city"
+			name="card-billing-address-city"
+			autocomplete="off"
+			placeholder="city"
+		  />
+		</div>
+		<div>
+		  <input
+			type="text"
+			id="card-billing-address-state"
+			name="card-billing-address-state"
+			autocomplete="off"
+			placeholder="state"
+		  />
+		</div>
+		<div>
+		  <input
+			type="text"
+			id="card-billing-address-zip"
+			name="card-billing-address-zip"
+			autocomplete="off"
+			placeholder="zip / postal code"
+		  />
+		</div>
+		<div>
+		  <input
+			type="text"
+			id="card-billing-address-country"
+			name="card-billing-address-country"
+			autocomplete="off"
+			placeholder="country code"
+		  />
+		  <p style="margin-top: 0;">Card country code must be all-uppercase two letters (ISO2 country code).  US for United States, GB for United Kingdom, DE for Germany, FR for France, JP for Japan, etc.</p>
+		</div>
+		<br /><br />
+		<div id="card-payment-processing-notification-area"></div>
+		<button value="submit" id="submit" class="btn">Pay with card</button>
+	  </form>
+	  <div id="card-payment-error-notification-area"></div>	  
+	</div>
+    <script src="../app.js"></script>
+	<!-- PayPal checkout form end -->
+
+	<!-- Stock purchase terms and conditions section start -->
+
+	<!-- Stock purchase terms and conditions section end -->
+
+
+	<footer style="margin: 0; padding: 0.25% 0.5% 0.1% 0; background: rgb(0,0,0); color: rgb(255,255,255); font-family: Arial, Helvetica, sans-serif; text-align: center;">
+		<p style="color: rgb(255,255,255);">Allen Young's Stockmarket Demo by Allen Young.</p>
+		<p style="color: rgb(255,255,255);">For demonstrating Allen Young's full-stack web app development skills to potential employers.</p>
+		<p style="color: rgb(255,255,255);">For more of Allen Young's software development skills demonstration, visit <a href="https://AllenYoung.dev" target="_blank"  style="color: white;">AllenYoung.dev</a> and <a href="https://GitHub.com/AllenYoungDev" target="_blank" style="color: white;">GitHub.com/AllenYoungDev</a>.</p>
+		<p style="color: rgb(255,255,255);">© 2023 Allen Young.  All rights reserved.</p>
+	</footer>	
+  </body>
+</html>

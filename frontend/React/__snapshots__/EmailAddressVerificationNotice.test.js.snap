@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo Email Address Verification Notice Page 1`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <a
+      href="http://localhost"
+      style={
+        {
+          "color": "rgb(255,255,255)",
+          "textDecoration": "none",
+        }
+      }
+    >
+      Allen Young's Stockmarket Demo
+    </a>
+  </div>,
+  <section
+    className="email-verification-controls-section"
+  >
+    <h1
+      className="email-verification-controls-section-heading"
+    >
+      Verify Your Email Address
+    </h1>
+    <div
+      className="email-verification-controls-div"
+    >
+      <p>
+        Email address:  
+        test@allenyoung.dev
+      </p>
+      <p>
+        You cannot log in until you verify your email address.
+      </p>
+      <p
+        style={
+          {
+            "marginBottom": "0.5%",
+          }
+        }
+      >
+        Please check your email inbox and click the verification link to verify your email address.
+      </p>
+      <div
+        style={
+          {
+            "textAlign": "center",
+          }
+        }
+      >
+        <p
+          className="email-address-verification-email-resend-button-error-notice"
+          id="error_notice"
+        />
+        <button
+          className="email-address-verification-email-resend-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Resend email-address verification email
+        </button>
+      </div>
+    </div>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;

@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+.top-bar { display:grid; grid-template-columns: 50% 50%; margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); font-family: Arial, Helvetica, sans-serif; }
+.top-bar-left-column { grid-row: 1; grid-column: 1; text-align: left; margin:0; }
+.top-bar-right-column { grid-row: 1; grid-column: 2; text-align: right; margin:0; }
+
+@media only screen and (orientation: landscape) {
+.login-controls-section {background-color: #737CA1;color: rgb(250,250,250);padding-bottom: 1.5%;}
+.login-controls-section-heading {text-align: left; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0;}
+.login-form {margin: 1% 0% 0% 0%;}
+.login-form-div-grid {display:grid; grid-template-columns: 25% 25% 15% 10% 25%; grid-gap:5px; font-size: 130%;font-family: arial;}
+.login-form-label-email-address {grid-row: 1; grid-column: 2;text-align: right;}
+.login-form-input-email-address {grid-row: 1; grid-column: 3;}
+.login-form-label-password {grid-row: 2; grid-column: 2;text-align: right;}
+.login-form-input-password {grid-row: 2; grid-column: 3;}
+.login-form-password-show-hide {grid-row: 2; grid-column: 4;margin: 0; padding: 0.35em 0 0 0.25em;text-align: left;font-size: 60%;font-family: Arial, Helvetica, sans-serif; font-weight: 50;}
+.login-form-div-login-button {text-align: center;}
+.login-form-error-notice {text-align: center; margin: 1% 0 0 0;font-size: 120%;color: rgb(70,0,0);}
+.login-form-input-login-button {margin: 1% 0 0 0; padding: 0.5%; font-size: 150%; font-weight: 900; background-color: #2B547E; border-radius: 0px; color: rgb(250,250,250);}
+}
+@media only screen and (orientation: portrait) {
+.login-controls-section {background-color: #737CA1;color: rgb(250,250,250);padding-bottom: 1.5%;}
+.login-controls-section-heading {text-align: left; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0 0 3% 0;}
+.login-form {margin: 1% 0% 0% 0%;font-size: 200%;}
+.login-form-div-grid {display:grid; grid-template-columns: 40% 50% 10%; font-size: 130%;font-family: arial;}
+.login-form-label-email-address {grid-row: 1; grid-column: 1;text-align: right; font-size: 130%; margin-right: 3%;}
+.login-form-input-email-address {grid-row: 1; grid-column: 2; font-size: 130%;margin-bottom: 2%;}
+.login-form-label-password {grid-row: 2; grid-column: 1;text-align: right; font-size: 130%; margin-right: 3%;}
+.login-form-input-password {grid-row: 2; grid-column: 2; font-size: 130%;}
+.login-form-password-show-hide {grid-row: 2; grid-column: 3;margin: 0; padding: 0.35em 0 0 0.25em;text-align: left;font-size: 60%;font-family: Arial, Helvetica, sans-serif; font-weight: 50;}
+.login-form-div-login-button {text-align: center;}
+.login-form-error-notice {text-align: center; margin: 1% 0 0 0;font-size: 120%;color: rgb(70,0,0);}
+.login-form-input-login-button {margin: 1% 0 0 0; padding: 0.5%; font-size: 150%; font-weight: 900; background-color: #2B547E; border-radius: 0px; color: rgb(250,250,250);}
+}
+
+.footer   {margin: 0; padding: 0.25% 0.5% 0.1% 0; background: rgb(0,0,0); color: rgb(255,255,255); font-family: Arial, Helvetica, sans-serif; text-align: center;}
+</style>
+</head>
+<body style="margin: 0; background-color: #FFFFFF;color: rgb(250,250,250);">
+
+<div id="login-page"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<script type="module" src="login.render.js"></script>
+
+<noscript>Your browser must support JavaScript.</noscript>
+</body>
+</html>

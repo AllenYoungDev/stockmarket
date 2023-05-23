@@ -1,0 +1,110 @@
+<html>
+<head>
+<style>
+.top-bar { margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif; }
+
+@media only screen and (orientation: landscape) {
+.registration-form-section {margin: 0;background-color: #737CA1;color: rgb(250,250,250);}
+.registration-form-section-heading {text-align: center; font-size: 250%; font-family: Arial, Helvetica, sans-serif; font-weight: 520; margin: 0;}
+.registration-form {margin: 1% 0% 0% 0%;}
+.registration-form-div-grid {display:grid; grid-template-columns: 33% 12% 12% 33%; grid-gap:5px; font-size: 130%;font-family: arial;}
+.registration-form-label-first-name {grid-row: 1; grid-column: 2; text-align: right;}
+.registration-form-input-first-name {grid-row: 1; grid-column: 3; height: 2em; }
+.registration-form-label-last-name {grid-row: 2; grid-column: 2;text-align: right;}
+.registration-form-input-last-name {grid-row: 2; grid-column: 3; height: 2em; }
+.registration-form-div-below-first-last-names {margin: 2.5%;grid-row: 3; grid-column: 2;}
+.registration-form-label-email-address {grid-row: 4; grid-column: 2;text-align: right;}
+.registration-form-input-email-address {grid-row: 4; grid-column: 3; grid-gap:15px; height: 2em; }
+.registration-form-label-phone-number {grid-row: 5; grid-column: 2;text-align: right;}
+.registration-form-input-phone-number {grid-row: 5; grid-column: 3; height: 2em; }
+.registration-form-div-below-phone-number {margin: 2.5%;grid-row: 6; grid-column: 2;}
+.registration-form-label-password {grid-row: 7; grid-column: 2;text-align: right;}
+.registration-form-input-password {grid-row: 7; grid-column: 3; height: 2em; }
+.registration-form-password-show-hide {grid-row: 7; grid-column: 4;margin: 0; padding: 0.35em 0 0 0.25em;text-align: left;font-size: 60%;font-family: Arial, Helvetica, sans-serif; font-weight: 50;}
+.registration-form-label-password-retype {grid-row: 8; grid-column: 2;text-align: right;}
+.registration-form-input-password-retype {grid-row: 8; grid-column: 3; height: 2em; }
+.registration-form-paragraph-notice1 {text-align: center; margin: 1% 0 0 0;font-size: 120%;}
+.registration-form-paragraph-notice2 {text-align: center; margin: 0.5% 0 0 0;font-size: 120%;}
+.registration-form-paragraph-notice3 {text-align: center; margin: 0.5% 0 0 0;font-size: 120%;}
+.registration-form-div-register-button {text-align: center;}
+.registration-form-error-notice {text-align: center; margin: 1% 0 0 0;font-size: 120%;color: rgb(70,0,0);}
+.registration-form-input-register-button {margin: 1% 0 1.25% 0; padding: 0.5%; font-size: 135%; font-weight: 900; background-color: #2B547E; border-radius: 0px; color: rgb(250,250,250);}
+}
+@media only screen and (orientation: portrait) {
+.registration-form-section {margin: 0;background-color: #737CA1;color: rgb(250,250,250);}
+.registration-form-section-heading {text-align: center; font-size: 250%; font-family: Arial, Helvetica, sans-serif; font-weight: 520; margin: 0 0 3% 0;}
+.registration-form {margin: 1% 0% 0% 0%; font-size: 200%;}
+.registration-form-div-grid {display:grid; grid-template-columns: 40% 50% 10%; font-size: 130%;font-family: arial;}
+.registration-form-label-first-name {grid-row: 1; grid-column: 1; text-align: right; margin-right: 3%;font-size: 130%;}
+.registration-form-input-first-name {grid-row: 1; grid-column: 2; height: 1.2em; font-size: 130%; margin-bottom: 2%;}
+.registration-form-label-last-name {grid-row: 2; grid-column: 1;text-align: right; margin-right: 3%;font-size: 130%;}
+.registration-form-input-last-name {grid-row: 2; grid-column: 2; height: 1.2em; font-size: 130%;}
+.registration-form-div-below-first-last-names {margin: 2.5%;grid-row: 3; grid-column: 1;}
+.registration-form-label-email-address {grid-row: 4; grid-column: 1;text-align: right; margin-right: 3%;font-size: 130%;}
+.registration-form-input-email-address {grid-row: 4; grid-column: 2; grid-gap:15px; height: 1.2em; font-size: 130%;margin-bottom: 2%;}
+.registration-form-label-phone-number {grid-row: 5; grid-column: 1;text-align: right; margin-right: 3%;font-size: 130%;}
+.registration-form-input-phone-number {grid-row: 5; grid-column: 2; height: 1.2em; font-size: 130%;}
+.registration-form-div-below-phone-number {margin: 2.5%;grid-row: 6; grid-column: 1;}
+.registration-form-label-password {grid-row: 7; grid-column: 1;text-align: right; margin-right: 3%;font-size: 130%;}
+.registration-form-input-password {grid-row: 7; grid-column: 2; height: 1.2em; font-size: 130%;margin-bottom: 2%;}
+.registration-form-password-show-hide {grid-row: 7; grid-column: 3;margin: 0; padding: 0.35em 0 0 0.25em;text-align: left;font-size: 60%;font-family: Arial, Helvetica, sans-serif; font-weight: 50;}
+.registration-form-label-password-retype {grid-row: 8; grid-column: 1;text-align: right; margin-right: 3%;font-size: 130%;}
+.registration-form-input-password-retype {grid-row: 8; grid-column: 2; height: 1.2em; font-size: 130%;}
+.registration-form-paragraph-notice1 {text-align: center; margin: 3% 0 2% 0;font-size: 120%;}
+.registration-form-paragraph-notice2 {text-align: center; margin: 0.5% 0 2% 0;font-size: 120%;}
+.registration-form-paragraph-notice3 {text-align: center; margin: 0.5% 0 0 0;font-size: 120%;}
+.registration-form-div-register-button {text-align: center;}
+.registration-form-error-notice {text-align: center; margin: 1% 0 0 0;font-size: 120%;color: rgb(70,0,0);}
+.registration-form-input-register-button {margin: 2% 0 2.25% 0; padding: 0.5%; font-size: 200%; font-weight: 900; background-color: #2B547E; border-radius: 0px; color: rgb(250,250,250);}
+}
+
+.footer   {margin: 0; padding: 0.25% 0.5% 0.1% 0; background: rgb(0,0,0); color: rgb(255,255,255); font-family: Arial, Helvetica, sans-serif; text-align: center;}
+</style>
+
+</head>
+<body style="margin: 0; background-color: #FFFFFF;color: rgb(250,250,250);">
+
+<div id="user-registration-page"></div>
+
+
+
+
+<!-- React component below, AccountRegistrationForm -->
+<!--
+<form class="settings" action="/action_page.php" style="margin: 1% 0% 0% 0%;">
+  <div style="display:grid; grid-template-columns: 20% 20% 10% 20% 30%; grid-gap:5px; font-size: 130%;font-family: arial;">
+  <label for="fname" style="grid-row: 1; grid-column: 1; text-align: right;">First name</label>
+  <input type="text" id="fname" name="fname" size="20" style="grid-row: 1; grid-column: 2;">
+  <label for="lname" style="grid-row: 1; grid-column: 3;text-align: right;">Last name</label>
+  <input type="text" id="lname" name="lname" size="20" style="grid-row: 1; grid-column: 4;">
+  <div style="margin: 2.5%;grid-row: 2; grid-column: 2;"></div>
+  <label for="emailaddress" style="grid-row: 3; grid-column: 1;text-align: right;">Email address</label>
+  <input type="text" id="emailaddress" name="emailaddress" size="20" style="grid-row: 3; grid-column: 2; grid-gap:15px;">  
+  <label for="phonenumber" style="grid-row: 4; grid-column: 1;text-align: right;">Phone number</label>
+  <input type="text" id="phonenumber" name="phonenumber" size="20" style="grid-row: 4; grid-column: 2;"> 
+  <div style="margin: 2.5%;grid-row: 5; grid-column: 2;"></div>
+  <label for="password" style="grid-row: 6; grid-column: 1;text-align: right;">Password</label>
+  <input type="text" id="password" name="password" size="20" style="grid-row: 6; grid-column: 2;">
+  <label for="passwordretype" style="grid-row: 7; grid-column: 1;text-align: right;">Password (Retype)</label>
+  <input type="text" id="passwordretype" name="passwordretype" size="20" style="grid-row: 7; grid-column: 2;">   
+  </div>
+
+  <p style="text-align: center; margin: 1% 0 0 0;font-size: 120%;">Password must be at least 10 characters, and must contain a letter, a number, and a special character from any of the following ~`!@#$%^&*-_+=|\/?;:"'<>,.{}[]().</p>
+  <p style="text-align: center; margin: 0.5% 0 0 0;font-size: 120%;">Your email address will be your login ID.</p>
+  <p style="text-align: center; margin: 0.5% 0 0 0;font-size: 120%;">After pressing the register button below, you'll receive an email-address verification email with a link that you must click to verify your email address.  You will not be able to log in before verifying your email address.</p>
+
+  <div style="text-align: center;">
+  <input type="submit" value="Register" style="margin: 1% 0 1.25% 0; padding: 0.5%; font-size: 150%; font-weight: 900; background-color: #2B547E; border-radius: 0px; color: rgb(250,250,250);">
+  </div>
+</form>
+-->
+
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<script type="module" src="registration.render.js"></script>
+
+<noscript>Your browser must support JavaScript.</noscript>
+</body>
+</html>

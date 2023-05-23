@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+  	<body style="margin: 0; background-color: #FFFFFF;color: rgb(250,250,250);">
+		<div style="margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">
+			<a href="http://localhost" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a>
+		</div>
+		
+		<section style="background-color: #737CA1;color: rgb(250,250,250);">
+		<h1 id="receipt-heading" style="text-align: center; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: normal; margin: 0;">
+			Purchase Receipt
+		</h1>
+		
+		<div style="font-size: 125%; font-family: Tahoma;text-align: center;">
+			<p style="padding: 0; margin: 0 0 1em 0;text-align: center;"><%= dateTime %></p>
+			
+			<p style="padding: 0; margin: 0 0 0 0;">Current Company valuation:  US$<%= currentValuation %></p>
+			<p style="padding: 0; margin: 0 0 1em 0;">Number of authorized Company shares:  <%= numberOfAuthorizedShares %></p>
+			
+			<p style="padding: 0; margin: 0 0 0 0;">Total number of Company shares bought:  <%= totalNumberOfSharesBought %> (<%= percentageOfAuthorizedShares %>% of authorized shares)</p>
+			<p style="padding: 0; margin: 0 0 1em 0;">Total price of Company shares bought:  US$<%= totalPriceOfSharesBought %> (plus 6% processing fee)</p>
+			
+			<p style="padding: 0; margin: 0 0 0 0;">PayPal transaction ID:  <%= paypalTransactionId %></p>
+			<p style="padding: 0; margin: 0 0 0 0;">Company transaction ID:  <%= companyTransactionId %></p>
+			<!--
+			<p style="padding: 0; margin: 0 0 0 0;">Payment type:  <%= paymentType %></p>
+			<p style="padding: 0; margin: 0 0 0 0;">Payment source:  <%= paymentSource %></p>
+			-->
+			<p style="padding: 0; margin: 0 0 0 0;">Name:  <%= fullName %></p>
+			<p style="padding: 0; margin: 0 0 0 0;">Email address:  <%= emailAddress %></p>
+			<p style="padding: 0; margin: 0 0 1em 0;">Phone number:  <%= phoneNumber %></p>
+			
+			<p style="padding: 0; margin: 0 0 1em 0;">Congratulations on purchasing Company share(s)!</p>
+			
+			<p style="padding: 0; margin: 0 0 1em 0;">A copy of this receipt has been emailed to you.</p>
+			
+			<p style="padding: 0; margin: 0 0 1em 0;">This transaction record is now available in your account page.</p>
+			
+			<p style="padding-bottom: 2%; margin-bottom: 0;">(all the Company stock purchase terms and conditions listed here.)</p>
+		</div>
+		</section>
+	
+		<footer style="margin: 0; padding: 0.25% 0.5% 0.1% 0; background: rgb(0,0,0); color: rgb(255,255,255); font-family: Arial, Helvetica, sans-serif; text-align: center;">
+			<p>Allen Young's Stockmarket Demo by Allen Young.</p>
+			<p>For demonstrating Allen Young's full-stack web app development skills to potential employers.</p>
+			<p>For more of Allen Young's software development skills demonstration, visit <a href="https://AllenYoung.dev" target="_blank"  style="color: white;">AllenYoung.dev</a> and <a href="https://GitHub.com/AllenYoungDev" target="_blank" style="color: white;">GitHub.com/AllenYoungDev</a>.</p>
+			<p>© 2023 Allen Young.  All rights reserved.</p>
+		</footer>		
+
+	</body>
+</html>

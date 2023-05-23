@@ -1,0 +1,1149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user account page 1`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/registration.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Register
+      </a>
+       | 
+      <a
+        href="http://localhost/login.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Login
+      </a>
+    </div>
+  </div>,
+  <section
+    className="account-settings-section"
+  >
+    <h1
+      className="account-settings-section-heading"
+    >
+      Account Settings
+    </h1>
+    <form
+      className="account-settings-update-form"
+    >
+      <div
+        className="account-settings-update-form-div-grid"
+      >
+        <label
+          className="account-settings-update-form-label-first-name"
+          htmlFor="fname"
+        >
+          First name
+        </label>
+        <input
+          className="account-settings-update-form-input-first-name"
+          disabled={true}
+          id="fname"
+          name="fname"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-last-name"
+          htmlFor="lname"
+        >
+          Last name
+        </label>
+        <input
+          className="account-settings-update-form-input-last-name"
+          disabled={true}
+          id="lname"
+          name="lname"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-last-name"
+        />
+        <label
+          className="account-settings-update-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="account-settings-update-form-input-email-address"
+          disabled={true}
+          id="emailaddress"
+          name="emailaddress"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-phone-number"
+          htmlFor="phonenumber"
+        >
+          Phone number
+        </label>
+        <input
+          className="account-settings-update-form-input-phone-number"
+          disabled={true}
+          id="phonenumber"
+          name="phonenumber"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-phone-number"
+        />
+        <label
+          className="account-settings-update-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="account-settings-update-form-input-password"
+          disabled={true}
+          id="password"
+          name="password"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-password-retype"
+          htmlFor="passwordretype"
+        >
+          Password (Retype)
+        </label>
+        <input
+          className="account-settings-update-form-input-password-retype"
+          disabled={true}
+          id="passwordretype"
+          name="passwordretype"
+          size="20"
+          type="text"
+        />
+      </div>
+      <p
+        className="account-settings-update-form-notice1"
+      >
+        Password must be at least 10 characters, and must contain a letter, a number, and a special character from any of the following ~\`!@#$%^&*-_+=|\\/?;:"'&lt;&gt;,.
+        []().
+      </p>
+      <p
+        className="account-settings-update-form-notice2"
+      >
+        Your email address is your login ID and PayPal account ID.
+      </p>
+      <p
+        className="account-settings-update-form-notice3"
+      >
+        Your email address will be updated instantly without the email-address verification.  Please make sure that the new email address you enter is correct.
+      </p>
+      <div
+        className="account-settings-update-form-div-button"
+      >
+        <input
+          className="account-settings-update-form-input-button"
+          disabled={true}
+          type="button"
+          value="Update"
+        />
+      </div>
+    </form>
+    <div>
+      <p
+        className="number-of-company-shares-owned"
+      >
+        Number of Company shares owned by me:  
+        1121
+      </p>
+    </div>
+  </section>,
+  <section
+    className="company-stock-transaction-history-section"
+  >
+    <h1
+      className="company-stock-transaction-history-section-heading"
+    >
+      Company Stock Transaction History
+    </h1>
+    <div
+      className="company-stock-transaction-history-div-display"
+    >
+      No records to show.
+    </div>
+    <p
+      className="company-stock-transaction-history-p-navigation"
+    >
+      &lt; 1 2 3 … (last page number) &gt;
+    </p>
+    <form
+      className="company-stock-transaction-history-form"
+    >
+      <label
+        htmlFor="page_number"
+      >
+        Page
+      </label>
+      <input
+        disabled={true}
+        id="page_number"
+        name="page_number"
+        size="5"
+        type="text"
+      />
+      <input
+        disabled={true}
+        type="button"
+        value="Go to"
+      />
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user account page 2`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href=""
+        onClick={[Function]}
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Logout
+      </a>
+    </div>
+  </div>,
+  <section
+    className="account-settings-section"
+  >
+    <h1
+      className="account-settings-section-heading"
+    >
+      Account Settings
+    </h1>
+    <form
+      className="account-settings-update-form"
+    >
+      <div
+        className="account-settings-update-form-div-grid"
+      >
+        <label
+          className="account-settings-update-form-label-first-name"
+          htmlFor="fname"
+        >
+          First name
+        </label>
+        <input
+          className="account-settings-update-form-input-first-name"
+          id="fname"
+          name="fname"
+          placeholder="First name"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-last-name"
+          htmlFor="lname"
+        >
+          Last name
+        </label>
+        <input
+          className="account-settings-update-form-input-last-name"
+          id="lname"
+          name="lname"
+          placeholder="Last name"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-last-name"
+        />
+        <label
+          className="account-settings-update-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="account-settings-update-form-input-email-address"
+          id="emailaddress"
+          name="emailaddress"
+          placeholder="Email address"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-phone-number"
+          htmlFor="phonenumber"
+        >
+          Phone number
+        </label>
+        <input
+          className="account-settings-update-form-input-phone-number"
+          id="phonenumber"
+          name="phonenumber"
+          placeholder="Phone number"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-phone-number"
+        />
+        <label
+          className="account-settings-update-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="account-settings-update-form-input-password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          size="20"
+          type="password"
+        />
+        <p
+          className="account-settings-update-form-password-show-hide"
+        >
+          <a
+            href=""
+            onClick={[Function]}
+            style={
+              {
+                "color": "rgb(255,255,255)",
+                "textDecoration": "none",
+              }
+            }
+          >
+            show
+          </a>
+        </p>
+        <label
+          className="account-settings-update-form-label-password-retype"
+          htmlFor="passwordretype"
+        >
+          Password (Retype)
+        </label>
+        <input
+          className="account-settings-update-form-input-password-retype"
+          id="passwordretype"
+          name="passwordretype"
+          placeholder="Password (Retype)"
+          size="20"
+          type="password"
+        />
+      </div>
+      <p
+        className="account-settings-update-form-notice1"
+      >
+        Password must be at least 10 characters, and must contain a letter, a number, and a special character from any of the following ~\`!@#$%^&*-_+=|\\/?;:"'&lt;&gt;,.
+        []().
+      </p>
+      <p
+        className="account-settings-update-form-notice2"
+      >
+        Your email address is your login ID and PayPal account ID.
+      </p>
+      <p
+        className="account-settings-update-form-notice3"
+      >
+        Your email address will be updated instantly without the email-address verification.  Please make sure that the new email address you enter is correct.
+      </p>
+      <div
+        className="account-settings-update-form-div-button"
+      >
+        <p
+          className="account-settings-update-form-error-notice"
+        />
+        <input
+          className="account-settings-update-form-input-button"
+          onClick={[Function]}
+          type="button"
+          value="Update"
+        />
+      </div>
+    </form>
+    <div>
+      <p
+        className="number-of-company-shares-owned"
+      >
+        Number of Company shares owned by me:  
+        1121
+      </p>
+    </div>
+  </section>,
+  <section
+    className="company-stock-transaction-history-section"
+  >
+    <h1
+      className="company-stock-transaction-history-section-heading"
+    >
+      Company Stock Transaction History
+    </h1>
+    <div
+      className="company-stock-transaction-history-div-display"
+    >
+      <table
+        className="company-stock-transaction-history-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Transaction start datetime
+            </th>
+            <th>
+              PayPal transaction (order) ID
+            </th>
+            <th>
+              Number of shares
+            </th>
+            <th>
+              Payment processing initiated
+            </th>
+            <th>
+              Payment processing completed
+            </th>
+            <th>
+              Payment processing status
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+    <p
+      className="company-stock-transaction-history-p-navigation"
+    >
+      <a
+        href=""
+        onClick={[Function]}
+        style={
+          {
+            "color": "#36454F",
+            "textDecoration": "none",
+          }
+        }
+      >
+        &lt;
+      </a>
+      <span>
+         
+      </span>
+      <a
+        href=""
+        onClick={[Function]}
+        style={
+          {
+            "color": "#36454F",
+            "textDecoration": "none",
+          }
+        }
+      >
+        &gt;
+      </a>
+    </p>
+    <form
+      className="company-stock-transaction-history-form"
+    >
+      <label
+        htmlFor="page_number"
+      >
+        Page
+      </label>
+      <input
+        id="page_number"
+        max={0}
+        min="1"
+        name="page_number"
+        onInput={[Function]}
+        size="5"
+        step="1"
+        type="number"
+      />
+      <input
+        onClick={[Function]}
+        type="button"
+        value="Go to"
+      />
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user account page 3`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <a
+        href="http://localhost/admin.html"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Admin
+      </a>
+       | 
+      <a
+        href=""
+        onClick={[Function]}
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Logout
+      </a>
+    </div>
+  </div>,
+  <section
+    className="account-settings-section"
+  >
+    <h1
+      className="account-settings-section-heading"
+    >
+      Account Settings
+    </h1>
+    <form
+      className="account-settings-update-form"
+    >
+      <div
+        className="account-settings-update-form-div-grid"
+      >
+        <label
+          className="account-settings-update-form-label-first-name"
+          htmlFor="fname"
+        >
+          First name
+        </label>
+        <input
+          className="account-settings-update-form-input-first-name"
+          id="fname"
+          name="fname"
+          placeholder="First name"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-last-name"
+          htmlFor="lname"
+        >
+          Last name
+        </label>
+        <input
+          className="account-settings-update-form-input-last-name"
+          id="lname"
+          name="lname"
+          placeholder="Last name"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-last-name"
+        />
+        <label
+          className="account-settings-update-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="account-settings-update-form-input-email-address"
+          id="emailaddress"
+          name="emailaddress"
+          placeholder="Email address"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-phone-number"
+          htmlFor="phonenumber"
+        >
+          Phone number
+        </label>
+        <input
+          className="account-settings-update-form-input-phone-number"
+          id="phonenumber"
+          name="phonenumber"
+          placeholder="Phone number"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-phone-number"
+        />
+        <label
+          className="account-settings-update-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="account-settings-update-form-input-password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          size="20"
+          type="password"
+        />
+        <p
+          className="account-settings-update-form-password-show-hide"
+        >
+          <a
+            href=""
+            onClick={[Function]}
+            style={
+              {
+                "color": "rgb(255,255,255)",
+                "textDecoration": "none",
+              }
+            }
+          >
+            show
+          </a>
+        </p>
+        <label
+          className="account-settings-update-form-label-password-retype"
+          htmlFor="passwordretype"
+        >
+          Password (Retype)
+        </label>
+        <input
+          className="account-settings-update-form-input-password-retype"
+          id="passwordretype"
+          name="passwordretype"
+          placeholder="Password (Retype)"
+          size="20"
+          type="password"
+        />
+      </div>
+      <p
+        className="account-settings-update-form-notice1"
+      >
+        Password must be at least 10 characters, and must contain a letter, a number, and a special character from any of the following ~\`!@#$%^&*-_+=|\\/?;:"'&lt;&gt;,.
+        []().
+      </p>
+      <p
+        className="account-settings-update-form-notice2"
+      >
+        Your email address is your login ID and PayPal account ID.
+      </p>
+      <p
+        className="account-settings-update-form-notice3"
+      >
+        Your email address will be updated instantly without the email-address verification.  Please make sure that the new email address you enter is correct.
+      </p>
+      <div
+        className="account-settings-update-form-div-button"
+      >
+        <p
+          className="account-settings-update-form-error-notice"
+        />
+        <input
+          className="account-settings-update-form-input-button"
+          onClick={[Function]}
+          type="button"
+          value="Update"
+        />
+      </div>
+    </form>
+    <div>
+      <p
+        className="number-of-company-shares-owned"
+      >
+        Number of Company shares owned by me:  
+        1121
+      </p>
+    </div>
+  </section>,
+  <section
+    className="company-stock-transaction-history-section"
+  >
+    <h1
+      className="company-stock-transaction-history-section-heading"
+    >
+      Company Stock Transaction History
+    </h1>
+    <div
+      className="company-stock-transaction-history-div-display"
+    >
+      No records to show.
+    </div>
+    <p
+      className="company-stock-transaction-history-p-navigation"
+    >
+      &lt; 1 2 3 … (last page number) &gt;
+    </p>
+    <form
+      className="company-stock-transaction-history-form"
+    >
+      <label
+        htmlFor="page_number"
+      >
+        Page
+      </label>
+      <input
+        disabled={true}
+        id="page_number"
+        name="page_number"
+        size="5"
+        type="text"
+      />
+      <input
+        disabled={true}
+        type="button"
+        value="Go to"
+      />
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
+
+exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user account page 4`] = `
+[
+  <div
+    className="top-bar"
+  >
+    <div
+      className="top-bar-left-column"
+    >
+      <a
+        href="http://localhost"
+        style={
+          {
+            "color": "rgb(255,255,255)",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Allen Young's Stockmarket Demo
+      </a>
+    </div>
+    <div
+      className="top-bar-right-column"
+    >
+      <div>
+        Network error.  Please retry later.
+      </div>
+    </div>
+  </div>,
+  <section
+    className="account-settings-section"
+  >
+    <h1
+      className="account-settings-section-heading"
+    >
+      Account Settings
+    </h1>
+    <form
+      className="account-settings-update-form"
+    >
+      <div
+        className="account-settings-update-form-div-grid"
+      >
+        <label
+          className="account-settings-update-form-label-first-name"
+          htmlFor="fname"
+        >
+          First name
+        </label>
+        <input
+          className="account-settings-update-form-input-first-name"
+          disabled={true}
+          id="fname"
+          name="fname"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-last-name"
+          htmlFor="lname"
+        >
+          Last name
+        </label>
+        <input
+          className="account-settings-update-form-input-last-name"
+          disabled={true}
+          id="lname"
+          name="lname"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-last-name"
+        />
+        <label
+          className="account-settings-update-form-label-email-address"
+          htmlFor="emailaddress"
+        >
+          Email address
+        </label>
+        <input
+          className="account-settings-update-form-input-email-address"
+          disabled={true}
+          id="emailaddress"
+          name="emailaddress"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-phone-number"
+          htmlFor="phonenumber"
+        >
+          Phone number
+        </label>
+        <input
+          className="account-settings-update-form-input-phone-number"
+          disabled={true}
+          id="phonenumber"
+          name="phonenumber"
+          size="20"
+          type="text"
+        />
+        <div
+          className="account-settings-update-form-div-below-phone-number"
+        />
+        <label
+          className="account-settings-update-form-label-password"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="account-settings-update-form-input-password"
+          disabled={true}
+          id="password"
+          name="password"
+          size="20"
+          type="text"
+        />
+        <label
+          className="account-settings-update-form-label-password-retype"
+          htmlFor="passwordretype"
+        >
+          Password (Retype)
+        </label>
+        <input
+          className="account-settings-update-form-input-password-retype"
+          disabled={true}
+          id="passwordretype"
+          name="passwordretype"
+          size="20"
+          type="text"
+        />
+      </div>
+      <p
+        className="account-settings-update-form-notice1"
+      >
+        Password must be at least 10 characters, and must contain a letter, a number, and a special character from any of the following ~\`!@#$%^&*-_+=|\\/?;:"'&lt;&gt;,.
+        []().
+      </p>
+      <p
+        className="account-settings-update-form-notice2"
+      >
+        Your email address is your login ID and PayPal account ID.
+      </p>
+      <p
+        className="account-settings-update-form-notice3"
+      >
+        Your email address will be updated instantly without the email-address verification.  Please make sure that the new email address you enter is correct.
+      </p>
+      <div
+        className="account-settings-update-form-div-button"
+      >
+        <input
+          className="account-settings-update-form-input-button"
+          disabled={true}
+          type="button"
+          value="Update"
+        />
+      </div>
+    </form>
+    <p
+      className="number-of-company-shares-owned"
+    >
+      Network error.  Please retry later.
+    </p>
+  </section>,
+  <section
+    className="company-stock-transaction-history-section"
+  >
+    <h1
+      className="company-stock-transaction-history-section-heading"
+    >
+      Company Stock Transaction History
+    </h1>
+    <div
+      className="company-stock-transaction-history-div-display"
+    >
+      No records to show.
+    </div>
+    <p
+      className="company-stock-transaction-history-p-navigation"
+    >
+      &lt; 1 2 3 … (last page number) &gt;
+    </p>
+    <form
+      className="company-stock-transaction-history-form"
+    >
+      <label
+        htmlFor="page_number"
+      >
+        Page
+      </label>
+      <input
+        disabled={true}
+        id="page_number"
+        name="page_number"
+        size="5"
+        type="text"
+      />
+      <input
+        disabled={true}
+        type="button"
+        value="Go to"
+      />
+    </form>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <p>
+      Allen Young's Stockmarket Demo by Allen Young.
+    </p>
+    <p>
+      For demonstrating Allen Young's full-stack web app development skills to potential employers.
+    </p>
+    <p>
+      For more of Allen Young's software development skills demonstration, visit 
+      <a
+        href="https://AllenYoung.dev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        AllenYoung.dev
+      </a>
+       and 
+      <a
+        href="https://GitHub.com/AllenYoungDev"
+        style={
+          {
+            "color": "white",
+          }
+        }
+        target="_blank"
+      >
+        GitHub.com/AllenYoungDev
+      </a>
+      .
+    </p>
+    <p>
+      © 2023 Allen Young.  All rights reserved.
+    </p>
+  </footer>,
+]
+`;
