@@ -114,6 +114,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo regi
           <a
             href=""
             onClick={[Function]}
+            role="password-show-hide"
             style={
               {
                 "color": "rgb(255,255,255)",
@@ -160,6 +161,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo regi
       >
         <p
           className="registration-form-error-notice"
+          role="error-notice"
         />
         <input
           className="registration-form-input-register-button"
@@ -357,6 +359,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo regi
       >
         <p
           className="registration-form-error-notice"
+          role="error-notice"
         />
         <input
           className="registration-form-input-register-button"
@@ -555,6 +558,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo regi
       >
         <p
           className="registration-form-error-notice"
+          role="error-notice"
         />
         <input
           className="registration-form-input-register-button"
@@ -723,6 +727,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo regi
           <a
             href=""
             onClick={[Function]}
+            role="password-show-hide"
             style={
               {
                 "color": "rgb(255,255,255)",
@@ -769,6 +774,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo regi
       >
         <p
           className="registration-form-error-notice"
+          role="error-notice"
         />
         <input
           className="registration-form-input-register-button"

@@ -284,6 +284,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo home
           </p>
           <p
             className="proceed-to-checkout-error-notice"
+            role="error-notice"
           />
           <input
             className="proceed-to-checkout-button-input"
@@ -692,6 +693,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo home
           </p>
           <p
             className="proceed-to-checkout-error-notice"
+            role="error-notice"
           />
           <input
             className="proceed-to-checkout-button-input"
@@ -1072,6 +1074,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo home
           </p>
           <p
             className="proceed-to-checkout-error-notice"
+            role="error-notice"
           />
           <input
             className="proceed-to-checkout-button-input"
@@ -1470,6 +1473,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo home
           </p>
           <p
             className="proceed-to-checkout-error-notice"
+            role="error-notice"
           />
           <input
             className="proceed-to-checkout-button-input"

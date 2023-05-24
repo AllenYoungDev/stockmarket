@@ -62,29 +62,29 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       User List
     </h1>
     <div
-      className="company-stock-transaction-history-div-display"
+      className="user-list-div-display"
     >
       No records to show.
     </div>
     <p
-      className="company-stock-transaction-history-p-navigation"
+      className="user-list-p-navigation"
     >
       &lt; 1 2 3 … (last page number) &gt;
     </p>
     <form
-      className="company-stock-transaction-history-form"
+      className="user-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="user_list_page_number"
       >
         Page
       </label>
       <input
         disabled={true}
-        id="page_number"
-        name="page_number"
+        id="user_list_page_number"
+        name="user_list_page_number"
         size="5"
-        type="text"
+        type="number"
       />
       <input
         disabled={true}
@@ -102,29 +102,29 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       Transaction List
     </h1>
     <div
-      className="company-stock-transaction-history-div-display"
+      className="transaction-list-div-display"
     >
       No records to show.
     </div>
     <p
-      className="company-stock-transaction-history-p-navigation"
+      className="transaction-list-p-navigation"
     >
       &lt; 1 2 3 … (last page number) &gt;
     </p>
     <form
-      className="company-stock-transaction-history-form"
+      className="transaction-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="transaction_history_page_number"
       >
         Page
       </label>
       <input
         disabled={true}
-        id="page_number"
-        name="page_number"
+        id="transaction_history_page_number"
+        name="transaction_history_page_number"
         size="5"
-        type="text"
+        type="number"
       />
       <input
         disabled={true}
@@ -239,29 +239,29 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       User List
     </h1>
     <div
-      className="company-stock-transaction-history-div-display"
+      className="user-list-div-display"
     >
       No records to show.
     </div>
     <p
-      className="company-stock-transaction-history-p-navigation"
+      className="user-list-p-navigation"
     >
       &lt; 1 2 3 … (last page number) &gt;
     </p>
     <form
-      className="company-stock-transaction-history-form"
+      className="user-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="user_list_page_number"
       >
         Page
       </label>
       <input
         disabled={true}
-        id="page_number"
-        name="page_number"
+        id="user_list_page_number"
+        name="user_list_page_number"
         size="5"
-        type="text"
+        type="number"
       />
       <input
         disabled={true}
@@ -279,29 +279,29 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       Transaction List
     </h1>
     <div
-      className="company-stock-transaction-history-div-display"
+      className="transaction-list-div-display"
     >
       No records to show.
     </div>
     <p
-      className="company-stock-transaction-history-p-navigation"
+      className="transaction-list-p-navigation"
     >
       &lt; 1 2 3 … (last page number) &gt;
     </p>
     <form
-      className="company-stock-transaction-history-form"
+      className="transaction-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="transaction_history_page_number"
       >
         Page
       </label>
       <input
         disabled={true}
-        id="page_number"
-        name="page_number"
+        id="transaction_history_page_number"
+        name="transaction_history_page_number"
         size="5"
-        type="text"
+        type="number"
       />
       <input
         disabled={true}
@@ -487,15 +487,15 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       className="user-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="user_list_page_number"
       >
         Page
       </label>
       <input
-        id="page_number"
+        id="user_list_page_number"
         max={0}
         min="1"
-        name="page_number"
+        name="user_list_page_number"
         onInput={[Function]}
         size="5"
         step="1"
@@ -594,15 +594,15 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       className="transaction-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="transaction_history_page_number"
       >
         Page
       </label>
       <input
-        id="page_number"
+        id="transaction_history_page_number"
         max={0}
         min="1"
-        name="page_number"
+        name="transaction_history_page_number"
         onInput={[Function]}
         size="5"
         step="1"
@@ -700,29 +700,29 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       User List
     </h1>
     <div
-      className="company-stock-transaction-history-div-display"
+      className="user-list-div-display"
     >
       No records to show.
     </div>
     <p
-      className="company-stock-transaction-history-p-navigation"
+      className="user-list-p-navigation"
     >
       &lt; 1 2 3 … (last page number) &gt;
     </p>
     <form
-      className="company-stock-transaction-history-form"
+      className="user-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="user_list_page_number"
       >
         Page
       </label>
       <input
         disabled={true}
-        id="page_number"
-        name="page_number"
+        id="user_list_page_number"
+        name="user_list_page_number"
         size="5"
-        type="text"
+        type="number"
       />
       <input
         disabled={true}
@@ -740,29 +740,29 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo admi
       Transaction List
     </h1>
     <div
-      className="company-stock-transaction-history-div-display"
+      className="transaction-list-div-display"
     >
       No records to show.
     </div>
     <p
-      className="company-stock-transaction-history-p-navigation"
+      className="transaction-list-p-navigation"
     >
       &lt; 1 2 3 … (last page number) &gt;
     </p>
     <form
-      className="company-stock-transaction-history-form"
+      className="transaction-list-form"
     >
       <label
-        htmlFor="page_number"
+        htmlFor="transaction_history_page_number"
       >
         Page
       </label>
       <input
         disabled={true}
-        id="page_number"
-        name="page_number"
+        id="transaction_history_page_number"
+        name="transaction_history_page_number"
         size="5"
-        type="text"
+        type="number"
       />
       <input
         disabled={true}

@@ -172,6 +172,10 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user
       <div
         className="account-settings-update-form-div-button"
       >
+        <p
+          className="account-settings-update-form-error-notice"
+          role="error-notice"
+        />
         <input
           className="account-settings-update-form-input-button"
           disabled={true}
@@ -405,6 +409,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user
           <a
             href=""
             onClick={[Function]}
+            role="password-show-hide"
             style={
               {
                 "color": "rgb(255,255,255)",
@@ -451,6 +456,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user
       >
         <p
           className="account-settings-update-form-error-notice"
+          role="error-notice"
         />
         <input
           className="account-settings-update-form-input-button"
@@ -752,6 +758,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user
           <a
             href=""
             onClick={[Function]}
+            role="password-show-hide"
             style={
               {
                 "color": "rgb(255,255,255)",
@@ -798,6 +805,7 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user
       >
         <p
           className="account-settings-update-form-error-notice"
+          role="error-notice"
         />
         <input
           className="account-settings-update-form-input-button"
@@ -1051,6 +1059,10 @@ exports[`React app Jest snapshot testing for Allen Young's Stockmarket Demo user
       <div
         className="account-settings-update-form-div-button"
       >
+        <p
+          className="account-settings-update-form-error-notice"
+          role="error-notice"
+        />
         <input
           className="account-settings-update-form-input-button"
           disabled={true}

@@ -30,20 +30,20 @@ AWS_FARGATE_INSTANCE_SSH_USERNAME
 AWS_FARGATE_INSTANCE_SSH_PASSWORD
 
 - paypal-live-api-client-id-with-app-secret
-PAYPAL-LIVE-API-CLIENT-ID
-PAYPAL-LIVE-API-APP-SECRET
+PAYPAL_LIVE_API_CLIENT_ID
+PAYPAL_LIVE_API_APP_SECRET
 
 - paypal-sandbox-api-client-id-with-app-secret
-PAYPAL-SANDBOX-API-CLIENT-ID
-PAYPAL-SANDBOX-API-APP-SECRET
+PAYPAL_SANDBOX_API_CLIENT_ID
+PAYPAL_SANDBOX_API_APP_SECRET
 
 - aws-api-access-key-id-with-secret-access-key
-AWS-API-ACCESS-KEY-ID
-AWS-API-SECRET-ACCESS-KEY
+AWS_API_ACCESS_KEY_ID
+AWS_API_SECRET_ACCESS_KEY
 
 - ay-stockmarket-admin-username-with-password
-AY-STOCKMARKET-ADMIN-USERNAME
-AY-STOCKMARKET-ADMIN-PASSWORD
+AY_STOCKMARKET_ADMIN_USERNAME
+AY_STOCKMARKET_ADMIN_PASSWORD
 
 
 Jenkins pipeline parameters used in this Jenkinsfile
@@ -107,39 +107,84 @@ node {
     stage('Test') {
         echo 'Testing....'
 
-        echo "${workspace}"
-
-        error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
-
-        echo "ayStockmarketGithubRepositoryUrl:  ${params.ayStockmarketGithubRepositoryUrl}"
-        echo "ayStockmarketFrontendDeploymentType:  ${params.ayStockmarketFrontendDeploymentType}"
-        echo "ayStockmarketBackendDeploymentType:  ${params.ayStockmarketBackendDeploymentType}"
-        echo "ayStockmarketFullstackDeploymentType:  ${params.ayStockmarketFullstackDeploymentType}"
-        echo "ayStockmarketDeploymentPlatformType:  ${params.ayStockmarketDeploymentPlatformType}"
-        echo "awsLightSailServerIpAddress:  ${params.awsLightSailServerIpAddress}"
-        echo "awsFargateInstanceIpAddress:  ${params.awsFargateInstanceIpAddress}"
-
         if (params.ayStockmarketDeploymentPlatformType == 'AWS LightSail' ||
             params.ayStockmarketDeploymentPlatformType == 'AWS Fargate SSH-only') {
             try {
+
+                /*
+                echo "${workspace}"
+                echo "${pwd()}"
+                dir("backend/Express.js") {
+                    echo "${pwd()}"
+                }
+                */
+
+                dir("frontend/React") {
+                    echo "Performing the React app Jest snapshot and DOM tests."
+                    sh 'npm install' 
+                    sh 'npm test'
+                }                 
+
+
+
+                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
+                
+
+                echo "Creating PayPal and AWS API credential files."
                 //add /backend/Express.js/.env file for PayPal sandbox API testing.
+                withCredentials([usernamePassword(credentialsId: 'paypal-sandbox-api-client-id-with-app-secret', 
+                    passwordVariable: 'PAYPAL_SANDBOX_API_APP_SECRET', 
+                    usernameVariable: 'PAYPAL_SANDBOX_API_CLIENT_ID')]) {
+
+                    dir("backend/Express.js") {
+                        sh 'echo CLIENT_ID=$PAYPAL_SANDBOX_API_CLIENT_ID > .env'
+                        sh 'echo APP_SECRET=$PAYPAL_SANDBOX_API_APP_SECRET >> .env'
+                    }                    
+                }     
                 //add /backend/Express.js/aws_config.json for accessing AWS API.
                 //    In a later version, a better AWS API access method than placing a credential file
-                //    on server should be used.
+                //    on server should be used.                
+                withCredentials([usernamePassword(credentialsId: 'aws-api-access-key-id-with-secret-access-key', 
+                    passwordVariable: 'AWS_API_SECRET_ACCESS_KEY', 
+                    usernameVariable: 'AWS_API_ACCESS_KEY_ID')]) {
 
-                sh 'cd ...'
-                sh 'set DEBUG=*'
-                sh 'node server.js true true &'
-                sh 'sleep 20'
+                    def awsConfigEchoString = '{ \\"accessKeyId\\": \\"$AWS_API_ACCESS_KEY_ID\\", ' + 
+                        '\\"secretAccessKey\\": \\"$AWS_API_SECRET_ACCESS_KEY\\", \\"region\\": \\"' +
+                        params.awsDeploymentRegion + '\\" }'
+
+                    echo "${awsConfigEchoString}"
+
+                    dir("backend/Express.js") {
+                        sh 'echo ' + awsConfigEchoString + ' > aws_config.json'
+                        sh 'echo \'\' >> aws_config.json'
+                    }                    
+                }                           
+
+                dir("backend/Express.js") {
+                    echo "Launching the test backend server."
+
+                    sh 'npm install'
+                    sh 'set DEBUG=*'
+                    sh 'node server.js true true &'
+                    sh 'sleep 30'
+
+                    echo "Performing the database API test."
+                    sh 'node database-access-test.js'
+
+                    echo "Performing the backend server REST API test."
+                    sh 'node server-test.js'
+                    //sh 'newman ...'
+                }    
+
+                echo "Launching the test frontend server."               
                 sh 'http-server -p 80 &'
                 sh 'sleep 15'
-                sh 'node database-access-test.js'
-                sh 'server-test.js'
-                sh 'newman ...'
-                sh 'npm install'
-                sh 'npm test'  //React app Jest tests 
+                
+                echo "Performing the Selenium end-to-end tests."
                 sh 'python selenium-e2e-test.py'
-                sh 'killall node'
+
+                echo "Killing the test frontend and backend servers."
+                sh 'killall -9 node'
                 sh 'unset -f DEBUG'
             } catch (Exception e) {
                 echo 'Exception occurred: ' + e.toString()
@@ -168,6 +213,16 @@ node {
     if (currentBuild.currentResult == 'SUCCESS') {
         stage('Deploy') {
             echo 'Deploying....'
+
+            error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
+
+            echo "ayStockmarketGithubRepositoryUrl:  ${params.ayStockmarketGithubRepositoryUrl}"
+            echo "ayStockmarketFrontendDeploymentType:  ${params.ayStockmarketFrontendDeploymentType}"
+            echo "ayStockmarketBackendDeploymentType:  ${params.ayStockmarketBackendDeploymentType}"
+            echo "ayStockmarketFullstackDeploymentType:  ${params.ayStockmarketFullstackDeploymentType}"
+            echo "ayStockmarketDeploymentPlatformType:  ${params.ayStockmarketDeploymentPlatformType}"
+            echo "awsLightSailServerIpAddress:  ${params.awsLightSailServerIpAddress}"
+            echo "awsFargateInstanceIpAddress:  ${params.awsFargateInstanceIpAddress}"
 
             if (${params.ayStockmarketDeploymentPlatformType == 'AWS LightSail'}) {
                 //Deploy by executing AWS CLI command(s)
