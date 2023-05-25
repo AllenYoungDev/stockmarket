@@ -123,20 +123,12 @@ node {
                 echo "${displayEnvironmentVariableValue}"                
                 */
 
-                dir("backend/Express.js") {
-                    echo "Performing the database API test."
-                    sh 'node database-access-test.js'
-                }    
-
-                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
-
-
-
-
                 dir("frontend/React") {
+                    echo "Performing npm install in ${pwd()}."
+                    sh 'npm install'
+
                     echo "Performing the React app Jest snapshot and DOM tests."
                     //sh 'whoami > whoami.txt' //The user is jenkins when pipeline is executed.
-                    sh 'npm install' 
                     sh 'npm test'
                 }                     
 
@@ -171,17 +163,20 @@ node {
                 }                           
 
                 dir("backend/Express.js") {
-                    echo "Launching the test backend server."
-
+                    echo "Performing npm install in ${pwd()}."
                     sh 'npm install'
-                    sh 'node server.js true true &'
-                    sh 'sleep 30'
 
                     echo "Performing the database API test."
                     sh 'node database-access-test.js'
 
-                    echo "Performing the backend server REST API test."
+                    echo "Launching the test backend server."
+                    sh 'node server.js true true &'
+                    sh 'sleep 30'
+
+                    echo "Performing the backend server REST API test with custom code."
                     sh 'node server-test.js'
+
+                    echo "Performing the backend server REST API test with Newman."
                     //sh 'newman ...'
                 }    
 

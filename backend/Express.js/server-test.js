@@ -92,7 +92,7 @@ database-access.js API test code
 ***************************************************************************************
 *************************************************************************************** */
 var previousUserEmailAddress = ''
-var userEmailAddress = 'allenyoung2004@gmail.com'
+var userEmailAddress = 'allenyoung@allenyoung.dev'
 
 const reLatestStockStatsTableEntryPrimaryKeyExtractor = 
   /(.*?)\|/;
@@ -316,7 +316,7 @@ async function performUpdateUserAccountSettingsTest(accessToken, firstName, last
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'server.js test failure!  Added user query error in performUpdateUserAccountSettingsTest()!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -384,7 +384,7 @@ function cleanup() {
     winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
     `"DELETE FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
     nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-    `'DELETE FROM "stock stats" WHERE "Stats entry datetime" = 1;'`
+    `"DELETE FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"`
     errorMessage = 'server.js test failure!  stock stats entry delete failure in cleanup()!'
     executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
 
@@ -392,7 +392,7 @@ function cleanup() {
     winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
     `"DELETE FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
     nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-    `'DELETE FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'`
+    `"DELETE FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"`
     errorMessage = 'server.js test failure!  Added user deletion failure in cleanup()!'
     executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
 
@@ -400,7 +400,7 @@ function cleanup() {
       winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
       `"DELETE FROM ""users"" WHERE ""Email address"" = '${previousUserEmailAddress}';"`
       nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-      `'DELETE FROM "users" WHERE "Email address" = \'${previousUserEmailAddress}\';'`
+      `"DELETE FROM \\"users\\" WHERE \\"Email address\\" = '${previousUserEmailAddress}';"`
       errorMessage = 'server.js test failure!  Previous added user deletion failure in cleanup()!'
       executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
     }
@@ -409,7 +409,7 @@ function cleanup() {
     winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
     `"DELETE FROM ""stock reservation"" WHERE ""Stock stats table entry primary key"" = ${latestStockStatsTableEntryPrimaryKey};"`
     nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-    `'DELETE FROM "stock reservation" WHERE "Stock stats table entry primary key" = ${latestStockStatsTableEntryPrimaryKey};'`
+    `"DELETE FROM \\"stock reservation\\" WHERE \\"Stock stats table entry primary key\\" = ${latestStockStatsTableEntryPrimaryKey};"`
     errorMessage = 'server.js test failure!  stock reservation entries delete failure in cleanup()!'
     executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
 
@@ -418,7 +418,7 @@ function cleanup() {
       winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
       `"DELETE FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
       nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-      `'DELETE FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'`
+      `"DELETE FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"`
       errorMessage = 'server.js test failure!  transactions entries delete failure in cleanup()!'
       executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
     }
@@ -471,7 +471,7 @@ async function testBackendRouteMethods() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'server.js test failure!  Stock stats table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -624,7 +624,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'server.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -732,7 +732,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'server.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -781,7 +781,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'server.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -993,7 +993,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'server.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1262,7 +1262,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'true' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'true' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'true' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout route method test 4 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1299,7 +1299,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'false' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'false' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'false' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout route method test 4 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1423,7 +1423,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'true' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'true' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'true' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout/api/orders route method test 3 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1460,7 +1460,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'false' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'false' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'false' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout/api/orders route method test 3 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1674,7 +1674,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""transactions"" SET ""Payment processing completed"" = 'true' WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "transactions" SET "Payment processing completed" = 'true' WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';` 
+  `"UPDATE \\"transactions\\" SET \\"Payment processing completed\\" = 'true' WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'server.js test failure!  /Receipt/:orderID route method test transactions table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1947,7 +1947,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'server.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -2118,7 +2118,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'false' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'false' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'false' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout route method test 4 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -2155,7 +2155,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'true' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'true' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'true' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout route method test 4 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -2251,7 +2251,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'false' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'false' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'false' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout route method test 4 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -2288,7 +2288,7 @@ requestBody = JSON.stringify({'emailAddress': userEmailAddress})
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE ""users"" SET ""Admin"" = 'true' WHERE ""Email address"" = '${emailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE "users" SET "Admin" = 'true' WHERE "Email address" = \'${emailAddress}\';` 
+  `"UPDATE \\"users\\" SET \\"Admin\\" = 'true' WHERE \\"Email address\\" = '${emailAddress}';"` 
   errorMessage = 'server.js test failure!  /Checkout route method test 4 route method test users table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
