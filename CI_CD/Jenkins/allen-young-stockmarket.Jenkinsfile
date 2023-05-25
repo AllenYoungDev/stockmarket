@@ -125,9 +125,7 @@ node {
 
                 dir("backend/Express.js") {
                     echo "Performing the database API test."
-                    sh 'set DEBUG=*'
                     sh 'node database-access-test.js'
-                    sh 'unset -f DEBUG'
                 }    
 
                 error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
@@ -176,7 +174,6 @@ node {
                     echo "Launching the test backend server."
 
                     sh 'npm install'
-                    sh 'set DEBUG=*'
                     sh 'node server.js true true &'
                     sh 'sleep 30'
 
@@ -201,7 +198,6 @@ node {
 
                 echo "Killing the test frontend and backend servers."
                 sh 'killall -9 node'
-                sh 'unset -f DEBUG'
             } catch (Exception e) {
                 echo 'Exception occurred: ' + e.toString()
 
