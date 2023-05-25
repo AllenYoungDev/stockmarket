@@ -123,6 +123,21 @@ node {
                 echo "${displayEnvironmentVariableValue}"                
                 */
 
+                dir("backend/Express.js") {
+                    echo "Launching the test backend server."
+
+                    sh 'npm install'
+                    sh 'set DEBUG=*'
+                    sh 'node server.js true true &'
+                    sh 'sleep 30'
+                }    
+
+                sh 'killall -9 node'
+                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
+
+
+
+
                 dir("frontend/React") {
                     echo "Performing the React app Jest snapshot and DOM tests."
                     //sh 'whoami > whoami.txt' //The user is jenkins when pipeline is executed.
