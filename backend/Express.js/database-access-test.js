@@ -204,7 +204,7 @@ async function performUpdateUserAccountSettingsTest(accessToken, firstName, last
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'database-access.js test failure!  Added user query error in performUpdateUserAccountSettingsTest()!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -269,7 +269,7 @@ function cleanup() {
     winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
     `"DELETE FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
     nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-    `'DELETE FROM "stock stats" WHERE "Stats entry datetime" = 1;'`
+    `"DELETE FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"`
     errorMessage = 'database-access.js test failure!  stock stats entry delete failure in cleanup()!'
     executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
 
@@ -277,7 +277,7 @@ function cleanup() {
     winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
     `"DELETE FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
     nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-    `'DELETE FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'`
+    `"DELETE FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"`
     errorMessage = 'database-access.js test failure!  Added user deletion failure in cleanup()!'
     executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
 
@@ -285,7 +285,7 @@ function cleanup() {
       winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
       `"DELETE FROM ""users"" WHERE ""Email address"" = '${previousUserEmailAddress}';"`
       nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-      `'DELETE FROM "users" WHERE "Email address" = \'${previousUserEmailAddress}\';'`
+      `"DELETE FROM \\"users\\" WHERE \\"Email address\\" = '${previousUserEmailAddress}';"`
       errorMessage = 'database-access.js test failure!  Previous added user deletion failure in cleanup()!'
       executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
     }
@@ -294,7 +294,7 @@ function cleanup() {
     winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
     `"DELETE FROM ""stock reservation"" WHERE ""Stock stats table entry primary key"" = ${latestStockStatsTableEntryPrimaryKey};"`
     nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-    `'DELETE FROM "stock reservation" WHERE "Stock stats table entry primary key" = ${latestStockStatsTableEntryPrimaryKey};'`
+    `"DELETE FROM \\"stock reservation\\" WHERE \\"Stock stats table entry primary key\\" = ${latestStockStatsTableEntryPrimaryKey};"`
     errorMessage = 'database-access.js test failure!  stock reservation entries delete failure in cleanup()!'
     executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
 
@@ -303,7 +303,7 @@ function cleanup() {
       winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
       `"DELETE FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
       nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-      `'DELETE FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'`
+      `"DELETE FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"`
       errorMessage = 'database-access.js test failure!  transactions entries delete failure in cleanup()!'
       executeSqlite3CliCommand(winSqlite3CliCommand, nixSqlite3CliCommand, errorMessage)
     }
@@ -346,7 +346,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -402,7 +402,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'database-access.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -444,7 +444,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'database-access.js test failure!  Added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -473,7 +473,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'database-access.js test failure!  setEmailAddressVerifiedInUsersTable() test added user query error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -523,7 +523,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""users"" WHERE ""Email address"" = '${userEmailAddress}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "users" WHERE "Email address" = \'${userEmailAddress}\';'` 
+  `"SELECT * FROM \\"users\\" WHERE \\"Email address\\" = '${userEmailAddress}';"` 
   errorMessage = 'database-access.js test failure!  Added user query for updatePasswordInUsersTable() test error!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -681,7 +681,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -715,7 +715,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -734,7 +734,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock reservation"" WHERE ""Stock stats table entry primary key"" = ${latestStockStatsTableEntryPrimaryKey};"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock reservation" WHERE "Stock stats table entry primary key" = ${latestStockStatsTableEntryPrimaryKey};'` 
+  `"SELECT * FROM \\"stock reservation\\" WHERE \\"Stock stats table entry primary key\\" = ${latestStockStatsTableEntryPrimaryKey};"` 
   errorMessage = 'database-access.js test failure!  Stock reservation table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -819,7 +819,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'` 
+  `"SELECT * FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  createTransactionInitiationEntry() test transactions table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -865,7 +865,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'` 
+  `"SELECT * FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  createTransactionInitiationEntry() test transactions table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -885,7 +885,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  updateTransactionsTableEntryForTransactionPaymentFailure() test stock stats table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -954,7 +954,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE OR ROLLBACK ""transactions"" SET ""Entry update counter"" = 0 WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE OR ROLLBACK "transactions" SET "Entry update counter" = 0 WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';` 
+  `"UPDATE OR ROLLBACK \\"transactions\\" SET \\"Entry update counter\\" = 0 WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  updateTransactionsTableEntryForTransactionPaymentFailure() test transactions table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -963,7 +963,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'` 
+  `"SELECT * FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  Second buy checkout webpage database-access test transactions table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -995,7 +995,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'` 
+  `"SELECT * FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  Second buy checkout webpage database-access test transactions table entry query failure after updateTransactionsTableEntryForTransactionPaymentSuccess() call!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1015,7 +1015,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for updateTransactionsTableEntryForTransactionPaymentSuccess() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1066,7 +1066,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1084,7 +1084,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE OR ROLLBACK ""stock reservation"" SET ""Stock reservation end datetime"" = 1 WHERE ""Reserving-user access token"" = '${accessToken}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE OR ROLLBACK "stock reservation" SET "Stock reservation end datetime" = 1 WHERE "Reserving-user access token" = \'${accessToken}\';` 
+  `"UPDATE OR ROLLBACK \\"stock reservation\\" SET \\"Stock reservation end datetime\\" = 1 WHERE \\"Reserving-user access token\\" = '${accessToken}';"` 
   errorMessage = 'database-access.js test failure!  removeAllApplicableEntriesInStockReservationTable() test stock reservation table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1105,7 +1105,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1145,7 +1145,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1172,7 +1172,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query for reserveSharesToBuy() validation failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1200,7 +1200,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE OR ROLLBACK ""transactions"" SET ""Transaction start datetime"" = 0, ""Payment processing completed"" = 'false' WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE OR ROLLBACK "transactions" SET "Transaction start datetime" = 0, "Payment processing completed" = \'false\' WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';` 
+  `"UPDATE OR ROLLBACK \\"transactions\\" SET \\"Transaction start datetime\\" = 0, \\"Payment processing completed\\" = 'false' WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  getTotalNumberOfSharesInTimedOutUncompletedTransactions() test transactions table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1239,7 +1239,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""stock stats"" WHERE ""Stats entry datetime"" = 1;"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "stock stats" WHERE "Stats entry datetime" = 1;'` 
+  `"SELECT * FROM \\"stock stats\\" WHERE \\"Stats entry datetime\\" = 1;"` 
   errorMessage = 'database-access.js test failure!  Stock stats table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1258,7 +1258,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"SELECT * FROM ""transactions"" WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'SELECT * FROM "transactions" WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';'` 
+  `"SELECT * FROM \\"transactions\\" WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  updateNumberOfAvailableSharesInStockStatsTableWithUncompletedTransactions() test transactions table entry query failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)
@@ -1301,7 +1301,7 @@ async function testDatabaseAccessApi() {
   winSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
   `"UPDATE OR ROLLBACK ""transactions"" SET ""Payment processing status"" = 'success' WHERE ""PayPal transaction (order) ID"" = '${payPalTransactionOrderId}';"`
   nixSqlite3CliCommand = `sqlite3 allen_young_stockmarket.db ` +
-  `'UPDATE OR ROLLBACK "transactions" SET "Payment processing status" = \'success\' WHERE "PayPal transaction (order) ID" = \'${payPalTransactionOrderId}\';` 
+  `"UPDATE OR ROLLBACK \\"transactions\\" SET \\"Payment processing status\\" = 'success' WHERE \\"PayPal transaction (order) ID\\" = '${payPalTransactionOrderId}';"` 
   errorMessage = 'database-access.js test failure!  getTotalNumberOfSharesInTimedOutUncompletedTransactions() test transactions table entry update failure!'
   sqlite3CliCommandExecutionResult = executeSqlite3CliCommand(winSqlite3CliCommand, 
     nixSqlite3CliCommand, errorMessage)

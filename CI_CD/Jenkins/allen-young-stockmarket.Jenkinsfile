@@ -124,15 +124,10 @@ node {
                 */
 
                 dir("backend/Express.js") {
-                    echo "Launching the test backend server."
-
-                    sh 'npm install'
-                    sh 'set DEBUG=*'
-                    sh 'node server.js true true &'
-                    sh 'sleep 30'
+                    echo "Performing the database API test."
+                    sh 'node database-access-test.js'
                 }    
 
-                sh 'killall -9 node'
                 error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
 
 
