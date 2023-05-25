@@ -429,9 +429,9 @@ async function testDatabaseAccessApi() {
     return
   }
 
-  //console.log('================cliOutputErr start==================')
-  //console.log(cliOutputErr)
-  //console.log('================cliOutputErr end==================')
+  console.log('================cliOutputErr start==================')
+  console.log(cliOutputErr)
+  console.log('================cliOutputErr end==================')
   regularExpressionMatchArray = reAssignNewAccessTokenFunctionOutputAccessTokenParser.exec(cliOutputErr)
   if (regularExpressionMatchArray == null || regularExpressionMatchArray.length !== 2) {
     console.log('database-access.js test failure!  reAssignNewAccessTokenFunctionOutputAccessTokenParser returned invalid result!  ' + String(regularExpressionMatchArray))
