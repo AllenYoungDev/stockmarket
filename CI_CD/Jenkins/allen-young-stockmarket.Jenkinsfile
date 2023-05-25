@@ -117,18 +117,18 @@ node {
                 dir("backend/Express.js") {
                     echo "${pwd()}"
                 }
+
+                echo "${DISPLAY}"
+                def displayEnvironmentVariableValue = sh 'echo $DISPLAY'
+                echo "${displayEnvironmentVariableValue}"                
                 */
 
                 dir("frontend/React") {
                     echo "Performing the React app Jest snapshot and DOM tests."
+                    //sh 'whoami > whoami.txt' //The user is jenkins when pipeline is executed.
                     sh 'npm install' 
                     sh 'npm test'
-                }                 
-
-
-
-                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
-                
+                }                     
 
                 echo "Creating PayPal and AWS API credential files."
                 //add /backend/Express.js/.env file for PayPal sandbox API testing.
@@ -176,7 +176,11 @@ node {
                     //sh 'newman ...'
                 }    
 
-                echo "Launching the test frontend server."               
+                sh 'killall -9 node'
+                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
+
+                echo "Launching the test frontend server." 
+                //install the frontend server first.             
                 sh 'http-server -p 80 &'
                 sh 'sleep 15'
                 

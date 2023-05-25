@@ -12,6 +12,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@aws-sdk/client-ses": "^3.259.0",
+    "@aws-sdk/client-s3": "^3.338.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
