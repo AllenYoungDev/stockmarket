@@ -149,9 +149,9 @@ class Allen_Young_Stockmarket_Selenium_E2e_Tester: #tag:  aysset
         self._emailAddressVerificationStatusUpdateCliCommandWindows = 'sqlite3 "' + os.path.join( \
             self._backendServerProgramDirectoryFullPath, self._databaseFileFullName) + \
             '" "UPDATE users SET ""Email address verified"" = \'true\' WHERE ""Email address"" = \'{}\';"'.format(self._userEmailAddress)
-        self._emailAddressVerificationStatusUpdateCliCommandLinux = "sqlite3 '" + os.path.join( \
+        self._emailAddressVerificationStatusUpdateCliCommandLinux = "sqlite3 \"" + os.path.join( \
             self._backendServerProgramDirectoryFullPath, self._databaseFileFullName) + \
-            "' 'UPDATE users SET \"Email address verified\" = 'true' WHERE \"Email address\" = '{}';'".format(self._userEmailAddress)
+            "\" \"UPDATE users SET \\\"Email address verified\\\" = 'true' WHERE \\\"Email address\\\" = '{}';\"".format(self._userEmailAddress)
 
         print(self._emailAddressVerificationStatusUpdateCliCommandWindows)
         print(self._emailAddressVerificationStatusUpdateCliCommandLinux)

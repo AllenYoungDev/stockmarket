@@ -187,6 +187,9 @@ node {
                     sh 'node database-access-test.js'
 
                     echo "Performing the backend server REST API test with custom code."
+                    sh 'rm *.pem'
+                    sh 'mkcert -install'
+                    sh 'mkcert localhost'                    
                     sh 'node server-test.js'
 
                     echo "Performing the backend server REST API test with Newman."
@@ -196,7 +199,7 @@ node {
                     def newmanApiTestshellCommand = 'node server.js true true & sleep 30 && ' + 
                         "cd \"${workspace}/CI_CD\"" + ' && echo $PWD'
                     sh newmanApiTestshellCommand   
-                    sh 'killall -9 node && sleep 10'
+                    sh 'pidof node && killall -9 node && sleep 10'
 
 
                     echo 'Performing the Selenium end-to-end tests.'  
@@ -208,8 +211,8 @@ node {
                         "\"${workspace}/backend/Express.js\" " +
                         "\"${workspace}/frontend/React\""                  
                     sh seleniumEndToEndTestShellCommand   
-                    sh 'killall -9 node'
-                    sh 'killall -9 http-server'           
+                    sh 'pidof node && killall -9 node'
+                    sh 'pidof http-server && killall -9 http-server'         
 
                     /*
                     sh """
@@ -227,8 +230,8 @@ node {
 
                 error "Testing failure.  Aborting."
 
-                sh 'killall -9 node'
-                sh 'killall -9 http-server'                 
+                sh 'pidof node && killall -9 node'
+                sh 'pidof http-server && killall -9 http-server'                 
             } 
         } else {
             //(This will be completed and tested later)
