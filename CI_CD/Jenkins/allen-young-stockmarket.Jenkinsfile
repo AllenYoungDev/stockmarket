@@ -140,6 +140,29 @@ node {
                 '''
                 */
 
+                sh '(pidof node && killall -9 node && sleep 10) || echo "No node process"'
+                sh '(pidof http-server && killall -9 http-server && sleep 10) || echo "No http-server process"' 
+
+                dir("backend/Express.js") {
+                    echo "Performing npm install in ${pwd()}."
+                    sh 'npm install'
+
+                    sh 'rm *.pem'
+                    sh 'mkcert -install'
+                    sh 'mkcert localhost'                    
+
+                    echo "Performing the backend server REST API test with Newman."
+                    sh 'rm allen_young_stockmarket.db'
+                    sh 'cp "allen_young_stockmarket(original, stock stats).db" allen_young_stockmarket.db'
+                    def newmanApiTestshellCommand = 'node server.js true true & sleep 30 && ' + 
+                        "cd \"${workspace}/CI_CD\"" + ' && newman run "Allen Young\'s Stockmarket Backend API test.postman_collection.json"'
+                    sh newmanApiTestshellCommand
+                    sh '(pidof node && killall -9 node && sleep 10) || echo "No node process"'        
+                }
+
+                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
+
+
                 dir("frontend/React") {
                     echo "Performing npm install in ${pwd()}."
                     sh 'npm install'
@@ -193,13 +216,12 @@ node {
                     sh 'node server-test.js'
 
                     echo "Performing the backend server REST API test with Newman."
-                    //sh 'node server.js true true & sleep 30;newman ...'
                     sh 'rm allen_young_stockmarket.db'
                     sh 'cp "allen_young_stockmarket(original, stock stats).db" allen_young_stockmarket.db'
                     def newmanApiTestshellCommand = 'node server.js true true & sleep 30 && ' + 
-                        "cd \"${workspace}/CI_CD\"" + ' && echo $PWD'
-                    sh newmanApiTestshellCommand   
-                    sh 'pidof node && killall -9 node && sleep 10'
+                        "cd \"${workspace}/CI_CD\"" + ' && newman run "Allen Young\'s Stockmarket Backend API test.postman_collection.json"'
+                    sh newmanApiTestshellCommand
+                    sh '(pidof node && killall -9 node && sleep 10) || echo "No node process"'
 
 
                     echo 'Performing the Selenium end-to-end tests.'  
@@ -211,8 +233,8 @@ node {
                         "\"${workspace}/backend/Express.js\" " +
                         "\"${workspace}/frontend/React\""                  
                     sh seleniumEndToEndTestShellCommand   
-                    sh 'pidof node && killall -9 node'
-                    sh 'pidof http-server && killall -9 http-server'         
+                    sh '(pidof node && killall -9 node && sleep 10) || echo "No node process"'
+                    sh '(pidof http-server && killall -9 http-server && sleep 10) || echo "No http-server process"'                            
 
                     /*
                     sh """
@@ -229,9 +251,9 @@ node {
                 echo 'Exception occurred: ' + e.toString()
 
                 error "Testing failure.  Aborting."
-
-                sh 'pidof node && killall -9 node'
-                sh 'pidof http-server && killall -9 http-server'                 
+ 
+                sh '(pidof node && killall -9 node && sleep 10) || echo "No node process"'
+                sh '(pidof http-server && killall -9 http-server && sleep 10) || echo "No http-server process"'                               
             } 
         } else {
             //(This will be completed and tested later)
