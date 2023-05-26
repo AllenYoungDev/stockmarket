@@ -123,6 +123,23 @@ node {
                 echo "${displayEnvironmentVariableValue}"                
                 */
 
+                /*
+                sh '''
+                    node backend/Express.js/server.js true true &
+                    sleep 30
+                    CI_CD/echo $PWD
+                '''
+                */
+
+                /*
+                sh '''
+                    cd backend/Express.js
+                    echo $PWD
+                    cd ${workspace}/CI_CD
+                    echo $PWD
+                '''
+                */
+
                 dir("frontend/React") {
                     echo "Performing npm install in ${pwd()}."
                     sh 'npm install'
@@ -169,40 +186,54 @@ node {
                     echo "Performing the database API test."
                     sh 'node database-access-test.js'
 
-                    echo "Launching the test backend server."
-                    sh 'node server.js true true &'
-                    sh 'sleep 30'
-
                     echo "Performing the backend server REST API test with custom code."
                     sh 'node server-test.js'
 
                     echo "Performing the backend server REST API test with Newman."
-                    //sh 'newman ...'
-                }    
+                    //sh 'node server.js true true & sleep 30;newman ...'
+                    sh 'rm allen_young_stockmarket.db'
+                    sh 'cp "allen_young_stockmarket(original, stock stats).db" allen_young_stockmarket.db'
+                    def newmanApiTestshellCommand = 'node server.js true true & sleep 30 && ' + 
+                        "cd \"${workspace}/CI_CD\"" + ' && echo $PWD'
+                    sh newmanApiTestshellCommand   
+                    sh 'killall -9 node && sleep 10'
 
-                sh 'killall -9 node'
-                error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
 
-                echo "Launching the test frontend server." 
-                //install the frontend server first.             
-                sh 'http-server -p 80 &'
-                sh 'sleep 15'
-                
-                echo "Performing the Selenium end-to-end tests."
-                sh 'python selenium-e2e-test.py'
+                    echo 'Performing the Selenium end-to-end tests.'  
+                    sh 'rm allen_young_stockmarket.db'
+                    sh 'cp "allen_young_stockmarket(original, stock stats).db" allen_young_stockmarket.db'                    
+                    def seleniumEndToEndTestShellCommand = 'node server.js true true & ' +
+                        "cd \"${workspace}/frontend/React\"" + ' && http-server -p 80 & sleep 30 && ' +
+                        "cd \"${workspace}/CI_CD\"" + ' && python3 selenium-e2e-test.py ' +
+                        "\"${workspace}/backend/Express.js\" " +
+                        "\"${workspace}/frontend/React\""                  
+                    sh seleniumEndToEndTestShellCommand   
+                    sh 'killall -9 node'
+                    sh 'killall -9 http-server'           
 
-                echo "Killing the test frontend and backend servers."
-                sh 'killall -9 node'
+                    /*
+                    sh """
+                        node server.js true true &
+                        cd \"${workspace}/frontend/React\"
+                        http-server -p 80 &
+                        sleep 30
+                        cd \"${workspace}/CI_CD\"
+                        echo $PWD
+                    """      
+                    */                 
+                }
             } catch (Exception e) {
                 echo 'Exception occurred: ' + e.toString()
 
                 error "Testing failure.  Aborting."
+
+                sh 'killall -9 node'
+                sh 'killall -9 http-server'                 
             } 
         } else {
             //(This will be completed and tested later)
             //AWS Fargate blue/green deployment
             customImage.inside {
-                sh 'set DEBUG=*'
                 sh 'node server.js true true &'
                 sh 'sleep 20'
                 sh 'http-server -p 80 &'
@@ -212,11 +243,12 @@ node {
                 sh 'newman ...'
                 sh 'npm test'  //React app Jest tests 
                 sh 'python selenium-e2e-test.py'
-                sh 'killall node'
-                sh 'unset -f DEBUG'
             }            
         }  
     }
+
+    error "Exiting to bypass further Jenkinsfile code execution (for gradual Jenkinsfile development and testing)."
+
     if (currentBuild.currentResult == 'SUCCESS') {
         stage('Deploy') {
             echo 'Deploying....'
