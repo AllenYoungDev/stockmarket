@@ -3,6 +3,8 @@ https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html
 
 */
 
+import "dotenv/config";
+
 import debugFactory from 'debug';
 const debug = debugFactory('aws-access');
 
@@ -16,39 +18,11 @@ import fetch from "node-fetch";
 import { SendEmailCommand } from "@aws-sdk/client-ses";
 
 
-const awsS3BucketName = 'ay-ocm-data-private'
-const awsS3BucketFolder = 'allen-young-stockmarket/'
+const awsS3BucketName = process.env.ALLEN_YOUNG_STOCKMARKET_AWS_S3_BUCKET_NAME;
+const awsS3BucketFolder = process.env.ALLEN_YOUNG_STOCKMARKET_AWS_S3_BUCKET_FOLDER;
 
-const emailSenderName = "Allen Young's Stockmarket";
+const emailSenderName = process.env.ALLEN_YOUNG_STOCKMARKET_EMAIL_SENDER_NAME;
 
-
-export async function createPresignedUrl(aws_s3_client) {
-	
-	const bucketParams = {
-	  Bucket: awsS3BucketName,
-	  Key: 'digital-products/Transhumanism_Plans_test.zip',
-	  Body: "BODY",
-	};	
-	
-  try {
-    // Create the command.
-    const command = new GetObjectCommand(bucketParams);
-
-    // Create the presigned URL.
-    var signedUrl = await getSignedUrl(aws_s3_client, command, {
-      expiresIn: 18000,
-    });
-    //debug(`\nGetting "${bucketParams.Key}" using signedUrl with body "${bucketParams.Body}" in v3`);
-    //debug(signedUrl);
-    const response = await fetch(signedUrl);
-    //debug(`\nResponse returned by signed URL: ${await response.text()}\n`);
-  } catch (err) {
-    debug("Error creating presigned URL", err);
-	return '';
-  }	
-	
-	return signedUrl;
-}
 
 export async function uploadFileToAwsS3(aws_s3_client, localFileContent, localFileFullName) {
 	const bucketParams = {

@@ -1,3 +1,6 @@
+import "dotenv/config";
+
+import process from 'node:process';
 import * as child_process from "node:child_process";
 import * as http from "node:http";
 import * as https from "node:https";
@@ -92,7 +95,7 @@ database-access.js API test code
 ***************************************************************************************
 *************************************************************************************** */
 var previousUserEmailAddress = ''
-var userEmailAddress = 'allenyoung@allenyoung.dev'
+var userEmailAddress = process.env.ALLEN_YOUNG_STOCKMARKET_SERVER_TEST_USER_EMAIL_ADDRESS
 
 const reLatestStockStatsTableEntryPrimaryKeyExtractor = 
   /(.*?)\|/;

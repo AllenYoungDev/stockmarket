@@ -1,6 +1,6 @@
 'use strict';
 
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchCompanyStockData(setStockDataServerResponse, ignore) {
 

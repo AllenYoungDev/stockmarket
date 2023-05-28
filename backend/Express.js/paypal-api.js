@@ -1,8 +1,11 @@
+import "dotenv/config";
+
 import fetch from "node-fetch";
 
 // set some important variables
-const { CLIENT_ID, APP_SECRET } = process.env;
-const base = "https://api-m.sandbox.paypal.com";
+const { ALLEN_YOUNG_STOCKMARKET_PAYPAL_CLIENT_ID, ALLEN_YOUNG_STOCKMARKET_PAYPAL_APP_SECRET} = process.env;
+const base = process.env.ALLEN_YOUNG_STOCKMARKET_PAYPAL_API_BASE_URL
+//const base = "https://api-m.sandbox.paypal.com";
 //const base = "https://api-m.paypal.com";
 
 // call the create order method
@@ -48,7 +51,7 @@ export async function capturePayment(orderId) {
 
 // generate access token
 export async function generateAccessToken() {
-  const auth = Buffer.from(CLIENT_ID + ":" + APP_SECRET).toString("base64");
+  const auth = Buffer.from(ALLEN_YOUNG_STOCKMARKET_PAYPAL_CLIENT_ID + ":" + ALLEN_YOUNG_STOCKMARKET_PAYPAL_APP_SECRET).toString("base64");
   const response = await fetch(`${base}/v1/oauth2/token`, {
     method: "post",
     body: "grant_type=client_credentials",

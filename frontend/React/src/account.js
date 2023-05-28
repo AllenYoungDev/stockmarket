@@ -4,8 +4,8 @@
 //import { createRoot } from 'react-dom/client';
 
 import { validateEmail } from './utilities/validators.js';
-import './utilities/ServerUrl.js';
-import './utilities/dbMaximumNumberOfRowsReturned.js';
+import './settings/ServerUrls.js';
+import './settings/dbMaximumNumberOfRowsReturned.js';
 import './pageNavigationControlsGenerator.js';
 import {fetchAccessTokenValidity} from './utilities/fetchAccessTokenValidity.js';
 import {fetchNumberOfCompanySharesOwnedByUser} from './utilities/fetchNumberOfCompanySharesOwnedByUser.js';

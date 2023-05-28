@@ -4,7 +4,7 @@
 //import { createRoot } from 'react-dom/client';
 //import { useState } from 'react';
 
-import './utilities/ServerUrl.js';
+import './settings/ServerUrls.js';
 import {fetchAccessTokenValidity} from './utilities/fetchAccessTokenValidity.js';
 import {fetchNumberOfCompanySharesOwnedByUser} from './utilities/fetchNumberOfCompanySharesOwnedByUser.js';
 import {fetchCompanyStockData} from './utilities/fetchCompanyStockData.js';

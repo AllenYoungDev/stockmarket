@@ -89,7 +89,7 @@ width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
 	<noscript>
 		<!-- Navigation bar start -->
 		<div style="display:grid; grid-template-columns: 50% 50%; margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">
-			<p style="grid-row: 1; grid-column: 1;text-align: left;margin:0;"><a href="http://localhost" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a></p>
+			<p style="grid-row: 1; grid-column: 1;text-align: left;margin:0;"><a href="<%= websiteHomeUrl %>" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a></p>
 			<!-- <p style="grid-row: 1; grid-column: 2;text-align: right;margin:0;">My account</p> -->
 		</div>
 		<!-- Navigation bar end -->
@@ -105,7 +105,7 @@ width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
     <script>
 		if (String(window.performance.getEntriesByType("navigation")[0].type) === "back_forward") {
 			//window.location.reload()
-			window.location.href = 'http://localhost';
+			window.location.href = '<%= websiteHomeUrl %>';
 		}
 
 		/*
@@ -119,12 +119,12 @@ width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
 			if (text === 'no record') {
 				//window.location.reload( true );
 			} else {
-				window.location.href = 'http://localhost';
+				window.location.href = '<%= websiteHomeUrl %>';
 			}
 			})
 		.catch((err) => {
 			console.error(`/Checkout webpage:  /CheckClientToken/:clientToken fetch() network error.  ${err}`);
-			window.location.href = 'http://localhost';
+			window.location.href = '<%= websiteHomeUrl %>';
 		});		
 		*/
 	</script>	
@@ -132,8 +132,8 @@ width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
 
 	<!-- Navigation bar start -->
 	<div style="display:grid; grid-template-columns: 50% 50%; margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">
-		<p style="grid-row: 1; grid-column: 1;text-align: left;margin:0;"><a href="http://localhost" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a></p>
-		<p style="grid-row: 1; grid-column: 2;text-align: right;margin:0;"><a href="http://localhost/account.html" style="text-decoration: none; color: rgb(255,255,255);">My account</a></p>
+		<p style="grid-row: 1; grid-column: 1;text-align: left;margin:0;"><a href="<%= websiteHomeUrl %>" style="text-decoration: none; color: rgb(255,255,255);">Allen Young's Stockmarket Demo</a></p>
+		<p style="grid-row: 1; grid-column: 2;text-align: right;margin:0;"><a href="<%= websiteHomeUrl %>account.html" style="text-decoration: none; color: rgb(255,255,255);">My account</a></p>
 	</div>
 	<!-- Navigation bar end -->
 
@@ -168,7 +168,7 @@ width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
 		// Display the message when countdown is over
 		if (timeleft < 0) {
 			clearInterval(myfunc);
-			window.location.href = 'http://localhost';
+			window.location.href = '<%= websiteHomeUrl %>';
 		}
 		}, 1000);
 	</script>
@@ -269,7 +269,7 @@ width: 100%;display: block;margin-left: 0;margin-right: 0;margin-top: 2%; }
 	  </form>
 	  <div id="card-payment-error-notification-area"></div>	  
 	</div>
-    <script src="../app.js"></script>
+    <script type="module" src="../app.js"></script>
 	<!-- PayPal checkout form end -->
 
 	<!-- Stock purchase terms and conditions section start -->

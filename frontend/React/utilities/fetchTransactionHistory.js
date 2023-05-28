@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchTransactionHistory(pageNumber, setTransactionListPageData, ignore) {
   let responseStatus = 0;

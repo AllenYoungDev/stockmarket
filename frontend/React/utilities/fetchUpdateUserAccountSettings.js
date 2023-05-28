@@ -1,6 +1,6 @@
 'use strict';
 
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchUpdateUserAccountSettings(firstName, lastName, emailAddress, phoneNumber, password, errorNoticeRef) {
     let updateUserAccountSettingsResponseStatus = 0;

@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import * as fs_promises from 'fs/promises';
 import * as path from 'path';
 
@@ -22,11 +24,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-const senderEmailAddress = 'sales@allenyoung.dev';
-const webAdminEmailAddress = 'allenyoung2004@gmail.com';
+const senderEmailAddress = process.env.ALLEN_YOUNG_STOCKMARKET_SENDER_EMAIL_ADDRESS;
+const webAdminEmailAddress = process.env.ALLEN_YOUNG_STOCKMARKET_WEB_ADMIN_EMAIL_ADDRESS;
 
-const websiteHomeUrl = 'http://localhost/'
-const backendApiBaseUrl = 'https://localhost:8888/'
+const websiteHomeUrl = process.env.ALLEN_YOUNG_STOCKMARKET_WEBSITE_HOME_URL;
+const backendApiBaseUrl = process.env.ALLEN_YOUNG_STOCKMARKET_BACKEND_API_BASE_URL;
 
 
 var aws_s3_client;
@@ -217,7 +219,7 @@ export async function sendEmailAddressVerificationEmail(userEmailAddress, access
 	htmlEmailContent = '<html><head></head>' +
 		'<body style="margin: 0;">' +
 		'<div style="margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">' +
-		'<a href="https://Stockmarket.AllenYoung.dev" target="_blank" style="color: white">Allen Young\'s Stockmarket Demo</a>' +
+		`<a href="${websiteHomeUrl}" target="_blank" style="color: white">Allen Young's Stockmarket Demo</a>` +
 		'</div>' +
 		'<section>' +
 		'<h1 style="text-align: left; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0;">Verify Your Email Address</h1>' +
@@ -262,7 +264,7 @@ export async function sendResetPasswordEmail(userEmailAddress, accessToken) {
 	htmlEmailContent = '<html><head></head>' +
 		'<body style="margin: 0;">' +
 		'<div style="margin: 0; padding: 1% 0.5% 1% 0; background: rgb(0,0,0); color: rgb(255,255,255); text-align: left; font-family: Arial, Helvetica, sans-serif;">' +
-		'<a href="https://Stockmarket.AllenYoung.dev" target="_blank" style="color: white">Allen Young\'s Stockmarket Demo</a>' +
+		`<a href="${websiteHomeUrl}" target="_blank" style="color: white">Allen Young's Stockmarket Demo</a>` +
 		'</div>' +
 		'<section>' +
 		'<h1 style="text-align: left; font-size: 300%; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0;">Password reset</h1>' +

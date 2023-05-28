@@ -1,3 +1,5 @@
+import './settings.js';
+
 paypal
   .Buttons({
     // Sets up the transaction when a payment button is clicked
@@ -36,7 +38,7 @@ paypal
           // Or go to another URL:  actions.redirect('thank_you.html');
 			var filenameSafeOrderId = data.orderID.replace(/[^a-z0-9]/gi, '_');
 			var filenameSafetransactionId = transaction.id.replace(/[^a-z0-9]/gi, '_');		  
-			var purchaseReceiptUrl = `https://localhost:8888/Receipt/${data.orderID}`;		  
+			var purchaseReceiptUrl = window.backendServerUrl + `/Receipt/${data.orderID}`;		  
 			//actions.redirect(productDownloadPageFileFullName);
 			window.location = purchaseReceiptUrl;
         });
@@ -156,7 +158,7 @@ if (paypal.HostedFields.isEligible()) {
 				if (transaction.status == 'COMPLETED') {
 					var filenameSafeOrderId = orderData.id.replace(/[^a-z0-9]/gi, '_');
 					var filenameSafetransactionId = transaction.id.replace(/[^a-z0-9]/gi, '_');		  
-					var purchaseReceiptUrl = `https://localhost:8888/Receipt/${orderData.id}`;	  
+					var purchaseReceiptUrl = window.backendServerUrl + `/Receipt/${orderData.id}`;	  
 					//actions.redirect(productDownloadPageFileFullName);
 					window.location = purchaseReceiptUrl;
 				} else {

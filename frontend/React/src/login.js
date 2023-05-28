@@ -4,7 +4,7 @@
 //import { createRoot } from 'react-dom/client';
 
 import { validateEmail } from './utilities/validators.js';
-import './utilities/ServerUrl.js';
+import './settings/ServerUrls.js';
 import {fetchAccessTokenValidity} from './utilities/fetchAccessTokenValidity.js';
 import {fetchLogin} from './utilities/fetchLogin.js';
 import { checkPasswordFormat } from './utilities/checkPasswordFormat.js';

@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchTotalNumberOfTransactions(setNumberOfTransactions, ignore) {
   let responseStatus = 0;

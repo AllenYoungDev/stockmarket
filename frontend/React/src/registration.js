@@ -7,7 +7,7 @@ import {fetchRegisterUser} from './utilities/fetchRegisterUser.js';
 import {fetchAccessTokenValidity} from './utilities/fetchAccessTokenValidity.js';
 import { validateEmail } from './utilities/validators.js';
 import './utilities/SendEmailAddressVerificationEmail.js';
-import './utilities/ServerUrl.js';
+import './settings/ServerUrls.js';
 import { checkPasswordFormat } from './utilities/checkPasswordFormat.js';
 import {footer} from './footer.js';
 

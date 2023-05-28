@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchLogin(emailAddress, password, errorNoticeDomNodeRef) {
   let loginResponse = 0;

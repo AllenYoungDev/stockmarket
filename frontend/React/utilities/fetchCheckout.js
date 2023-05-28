@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchCheckout(numberOfSharesToBuy, errorNoticeDomNodeRef) {
   let checkoutResponse = 0;

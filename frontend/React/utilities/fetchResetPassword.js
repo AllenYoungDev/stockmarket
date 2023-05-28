@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchResetPassword(accessToken, password, errorNoticeDomNodeRef) {
   let passwordResetResponseStatus = 0;

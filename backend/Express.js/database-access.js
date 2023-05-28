@@ -4,6 +4,8 @@ DO NOT delete the debug statements in this file.
 The debug outputs from this file is used in test automation.
 */
 
+import "dotenv/config";
+
 import sqlite3 from "sqlite3";
 
 import debugFactory from 'debug';
@@ -13,7 +15,7 @@ import crypto from "crypto";
 
 import {setTimeout} from "timers/promises";
 
-const dbFileFullName = 'allen_young_stockmarket.db'
+const dbFileFullName = process.env.ALLEN_YOUNG_STOCKMARKET_DB_FILE_FULL_NAME
 var db
 sqlite3.verbose()
 

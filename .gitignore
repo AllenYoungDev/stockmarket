@@ -3,5 +3,6 @@ node_modules/
 
 /backend/Express.js/.env*
 /backend/Express.js/aws_config.json
+/backend/Express.js/*.pem
 
 /frontend/React/coverage/

@@ -8,7 +8,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-import './utilities/ServerUrl.js';
+import './settings/ServerUrls.js';
 import { fetchAccessTokenValidity } from './utilities/fetchAccessTokenValidity.js';
 import { fetchNumberOfCompanySharesOwnedByUser } from './utilities/fetchNumberOfCompanySharesOwnedByUser.js';
 import { fetchCompanyStockData } from './utilities/fetchCompanyStockData.js';

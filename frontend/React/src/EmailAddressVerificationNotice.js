@@ -3,6 +3,7 @@
 //import React, { StrictMode } from "react";
 //import { createRoot } from 'react-dom/client';
 
+import './settings/ServerUrls.js';
 import './utilities/SendEmailAddressVerificationEmail.js';
 import {getEmailAddressInUrlParam} from './utilities/getEmailAddressInUrlParam.js';
 import {footer} from './footer.js';

@@ -23,11 +23,12 @@ const debug = debugFactory('server');
 
 import { checkPasswordFormat } from './checkPasswordFormat.js';
 
-const websiteHomeUrl = 'http://localhost/'
-const backendApiBaseUrl = 'https://localhost:8888/'
+const websiteHomeUrl = process.env.ALLEN_YOUNG_STOCKMARKET_WEBSITE_HOME_URL
+const backendApiBaseUrl = process.env.ALLEN_YOUNG_STOCKMARKET_BACKEND_API_BASE_URL
+const backendServerPort = process.env.ALLEN_YOUNG_STOCKMARKET_BACKEND_SERVER_PORT
 
-const privateKeyFilePath = 'localhost-key.pem'
-const certificateFilePath = 'localhost.pem'
+const privateKeyFilePath = process.env.ALLEN_YOUNG_STOCKMARKET_SSL_PRIVATE_KEY_FILE_PATH
+const certificateFilePath = process.env.ALLEN_YOUNG_STOCKMARKET_SSL_CERTIFICATE_FILE_PATH
 
 const validateEmail = (email) => {
   return email.match(
@@ -39,8 +40,8 @@ var latestStockStatsTableEntryPrimaryKey;
 var latestCurrentValuation
 var latestNumberOfAuthorizedShares
 var latestPricePerShare;
-var processingFeePercentage = 6;
-var transactionFeeMultiplier = 1.06; //6% processing fee
+var processingFeePercentage = Number(process.env.ALLEN_YOUNG_STOCKMARKET_PROCESSING_FEE_PERCENTAGE);
+var transactionFeeMultiplier = Number(process.env.ALLEN_YOUNG_STOCKMARKET_TRANSACTION_FEE_MULTIPLIER);
 
 var secureServer = false
 var corsServer = false
@@ -426,7 +427,7 @@ export async function runServer() {
 
     numberOfSharesToBuy = parseInt(numberOfSharesToBuy, 10)
     if(isNaN(numberOfSharesToBuy) || numberOfSharesToBuy < '1') {
-      res.status(400).render('Checkout_invalid-number-of-shares-to-buy')
+      res.status(400).render('Checkout_invalid-number-of-shares-to-buy', {websiteHomeUrl:websiteHomeUrl})
       return
     }
 
@@ -463,7 +464,7 @@ export async function runServer() {
 
     if (databaseAdminStatus) {
       debug(`/Checkout route method inside 'if (databaseAdminStatus)'.`)
-      res.status(400).render("Checkout_no-admin-stock-purchase");
+      res.status(400).render("Checkout_no-admin-stock-purchase", {websiteHomeUrl:websiteHomeUrl});
       return
     }
 
@@ -518,13 +519,13 @@ export async function runServer() {
       await database_access.reserveSharesToBuy(
         latestStockStatsTableEntryPrimaryKey, numberOfSharesToBuy, accessToken)
     } catch(error) {
-      res.status(400).render('Checkout_not-enough-shares-for-purchase')
+      res.status(400).render('Checkout_not-enough-shares-for-purchase', {websiteHomeUrl:websiteHomeUrl})
       return
     }
 
     // render checkout page with client id & unique client token
     // app.get("/", async (req, res) => { ... }); (This is the original PayPal route method signature.)
-    const clientId = process.env.CLIENT_ID;
+    const clientId = process.env.ALLEN_YOUNG_STOCKMARKET_PAYPAL_CLIENT_ID;
     totalOrderAmountInUsDollars = numberOfSharesToBuy * latestPricePerShare * transactionFeeMultiplier
     totalNumberOfSharesToBuy = numberOfSharesToBuy.toLocaleString()
     totalPriceOfSharesToBuy = totalOrderAmountInUsDollars.toLocaleString()
@@ -533,8 +534,9 @@ export async function runServer() {
       //debug('checkout page rendering start on backend.');
       const clientToken = await paypal.generateClientToken();
 
-      res.render("checkout", { clientId, clientToken, totalNumberOfSharesToBuy, totalPriceOfSharesToBuy,
-        pricePerShare, processingFeePercentage });
+      res.render("checkout", { clientId:clientId, clientToken:clientToken, websiteHomeUrl:websiteHomeUrl,
+        totalNumberOfSharesToBuy:totalNumberOfSharesToBuy, totalPriceOfSharesToBuy:totalPriceOfSharesToBuy,
+        pricePerShare:pricePerShare, processingFeePercentage:processingFeePercentage });
       debug(`/Checkout route method clientId:  ${clientId}.`)
       debug(`/Checkout route method clientToken:  ${clientToken}.`)
       //debug('checkout page rendering end on backend.');
@@ -572,7 +574,7 @@ export async function runServer() {
     const numberOfSharesToBuyInt = parseInt(numberOfSharesToBuyTrimmedString, 10)
 
     if(isNaN(numberOfSharesToBuyInt) || numberOfSharesToBuyInt < '1') {
-      res.status(400).render('Checkout_invalid-number-of-shares-to-buy')
+      res.status(400).render('Checkout_invalid-number-of-shares-to-buy', {websiteHomeUrl:websiteHomeUrl})
       return
     }
 
@@ -609,7 +611,7 @@ export async function runServer() {
 
     if (databaseAdminStatus) {
       debug(`/Checkout/:numberOfSharesToBuy route method inside 'if (databaseAdminStatus)'.`)
-      res.status(400).render("Checkout_no-admin-stock-purchase");
+      res.status(400).render("Checkout_no-admin-stock-purchase", {websiteHomeUrl:websiteHomeUrl});
       return
     }
 
@@ -664,13 +666,13 @@ export async function runServer() {
       await database_access.reserveSharesToBuy(
         latestStockStatsTableEntryPrimaryKey, numberOfSharesToBuyInt, accessToken)
     } catch(error) {
-      res.status(400).render('Checkout_not-enough-shares-for-purchase')
+      res.status(400).render('Checkout_not-enough-shares-for-purchase', {websiteHomeUrl:websiteHomeUrl})
       return
     }
 
     // render checkout page with client id & unique client token
     // app.get("/", async (req, res) => { ... }); (This is the original PayPal route method signature.)
-    const clientId = process.env.CLIENT_ID;
+    const clientId = process.env.ALLEN_YOUNG_STOCKMARKET_PAYPAL_CLIENT_ID;
     totalOrderAmountInUsDollars = numberOfSharesToBuyInt * latestPricePerShare * transactionFeeMultiplier
     totalNumberOfSharesToBuy = numberOfSharesToBuyInt.toLocaleString()
     totalPriceOfSharesToBuy = totalOrderAmountInUsDollars.toLocaleString()
@@ -679,8 +681,9 @@ export async function runServer() {
       //debug('checkout page rendering start on backend.');
       const clientToken = await paypal.generateClientToken();
 
-      res.render("checkout", { clientId, clientToken, totalNumberOfSharesToBuy, totalPriceOfSharesToBuy,
-        pricePerShare, processingFeePercentage });
+      res.render("checkout", { clientId:clientId, clientToken:clientToken, websiteHomeUrl:websiteHomeUrl,
+        totalNumberOfSharesToBuy:totalNumberOfSharesToBuy, totalPriceOfSharesToBuy:totalPriceOfSharesToBuy,
+        pricePerShare:pricePerShare, processingFeePercentage:processingFeePercentage });
       debug(`/Checkout/:numberOfSharesToBuy route method clientId:  ${clientId}.`)
       debug(`/Checkout/:numberOfSharesToBuy route method clientToken:  ${clientToken}.`)
       //debug('checkout page rendering end on backend.');
@@ -740,7 +743,7 @@ export async function runServer() {
     }
 
     if (databaseAdminStatus) {
-      res.status(400).render("Checkout_no-admin-stock-purchase");
+      res.status(400).render("Checkout_no-admin-stock-purchase", {websiteHomeUrl:websiteHomeUrl});
       return
     }
 
@@ -761,12 +764,12 @@ export async function runServer() {
     }
 
     if (result === null) {
-      res.status(400).render('Checkout_api_orders_stock-reservation-table-entry-error')
+      res.status(400).render('Checkout_api_orders_stock-reservation-table-entry-error', {websiteHomeUrl:websiteHomeUrl})
       return   
     }
 
     if (result[4] <= Date.now()) {
-      res.status(400).render('Checkout_api_orders_stock-reservation-expiration')
+      res.status(400).render('Checkout_api_orders_stock-reservation-expiration', {websiteHomeUrl:websiteHomeUrl})
       return   
     }
 
@@ -845,7 +848,7 @@ export async function runServer() {
     }
 
     if (databaseAdminStatus) {
-      res.status(400).render("Checkout_no-admin-stock-purchase");
+      res.status(400).render("Checkout_no-admin-stock-purchase", {websiteHomeUrl:websiteHomeUrl});
       return
     }
 
@@ -1007,7 +1010,7 @@ export async function runServer() {
       result = await database_access.getTransactionRecord(orderID)
 
       if (result === null) {
-        res.status(400).render("Receipt_no_transaction_record_error")
+        res.status(400).render("Receipt_no_transaction_record_error", {websiteHomeUrl:websiteHomeUrl})
         return
       }
     } catch (err) {
@@ -1058,7 +1061,11 @@ export async function runServer() {
     try {
       // if a callback is specified, the rendered HTML string has to be sent explicitly
       //https://expressjs.com/en/4x/api.html#res.render
-      res.render("Receipt", { dateTime, currentValuation, numberOfAuthorizedShares, totalNumberOfSharesBought, percentageOfAuthorizedShares, totalPriceOfSharesBought, paypalTransactionId, companyTransactionId, paymentType, paymentSource, fullName, emailAddress, phoneNumber }, function (err, html) {
+      res.render("Receipt", { websiteHomeUrl:websiteHomeUrl, dateTime:dateTime, currentValuation:currentValuation, 
+        numberOfAuthorizedShares:numberOfAuthorizedShares, totalNumberOfSharesBought:totalNumberOfSharesBought, 
+        percentageOfAuthorizedShares:percentageOfAuthorizedShares, totalPriceOfSharesBought:totalPriceOfSharesBought, 
+        paypalTransactionId:paypalTransactionId, companyTransactionId:companyTransactionId, paymentType:paymentType, 
+        paymentSource:paymentSource, fullName:fullName, emailAddress:emailAddress, phoneNumber:phoneNumber }, function (err, html) {
         debug(`/Receipt/:orderID res.render("Receipt") callback err:  ${err}`)
         if (err === null) {
           res.send(html)
@@ -1299,7 +1306,8 @@ export async function runServer() {
 
     try {
       await database_access.setEmailAddressVerifiedInUsersTable(accessToken)
-      res.render("GetEmailAddressVerificationSuccessPage_success_notification", { emailAddress })
+      res.render("GetEmailAddressVerificationSuccessPage_success_notification", 
+        { websiteHomeUrl:websiteHomeUrl, emailAddress:emailAddress })
     } catch(error) {
       //Send an email to the server admin using AWS SES.
       orderProcessor.logAndEmailError("/GetEmailAddressVerificationSuccessPage setEmailAddressVerifiedInUsersTable()", 
@@ -1366,7 +1374,8 @@ export async function runServer() {
     }
 
     try {
-      res.render('ResetPassword_check-your-email-for-password-reset', {emailAddress})
+      res.render('ResetPassword_check-your-email-for-password-reset', 
+        {websiteHomeUrl:websiteHomeUrl, emailAddress:emailAddress})
       return
     } catch(error) {
       //Send an email to the server admin using AWS SES.
@@ -1395,7 +1404,7 @@ export async function runServer() {
     }
 
     if (result === null) {
-      res.status(400).render('invalid_access_token_error')
+      res.status(400).render('invalid_access_token_error', {websiteHomeUrl:websiteHomeUrl})
       return
     }
 
@@ -1410,7 +1419,8 @@ export async function runServer() {
 
     try {
       await database_access.updatePasswordInUsersTable(accessToken, password)
-      res.render('ResetPassword_password-reset-success-notification', {emailAddress})
+      res.render('ResetPassword_password-reset-success-notification', 
+        {websiteHomeUrl:websiteHomeUrl, emailAddress:emailAddress})
     } catch(error) {
       //Send an email to the server admin using AWS SES.
       orderProcessor.logAndEmailError("/ResetPassword updatePasswordInUsersTable()", 
@@ -1896,10 +1906,10 @@ export async function runServer() {
         server = https.createServer({
             key: privateKey,
             cert: certificate
-        }, app).listen(8888);
+        }, app).listen(backendServerPort);
         console.log('HTTPS server started.')
       } else {
-        server = app.listen(8888);
+        server = app.listen(backendServerPort);
         console.log('HTTP server started.')
       }
     } catch (error) {

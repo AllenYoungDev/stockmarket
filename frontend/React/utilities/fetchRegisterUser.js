@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 import './SendEmailAddressVerificationEmail.js';
 
 export function fetchRegisterUser(firstName, lastName, emailAddress, phoneNumber, password, errorNoticeDomNodeRef) {

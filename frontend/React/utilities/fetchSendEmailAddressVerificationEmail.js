@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchSendEmailAddressVerificationEmail(requestUrl, emailAddress, accessToken) {
     var sendEmailAddressVerificationEmailResponseStatus = 0;
@@ -24,11 +24,11 @@ export function fetchSendEmailAddressVerificationEmail(requestUrl, emailAddress,
           //Redirect to EmailAddressVerificationNotice.html with proper parameters in URL
           if (emailAddress !== '') {
               window.location.href = 
-              `${frontendServerUrl}/EmailAddressVerificationNotice.html?emailAddress=${emailAddress}`;
+              `${window.frontendServerUrl}/EmailAddressVerificationNotice.html?emailAddress=${emailAddress}`;
           } else {
               window.location.href = 
-              `${frontendServerUrl}/EmailAddressVerificationNotice.html?emailAddress=${emailAddress}`;
-              //`${frontendServerUrl}/EmailAddressVerificationNotice.html?accessToken=${accessToken}`;
+              `${window.frontendServerUrl}/EmailAddressVerificationNotice.html?emailAddress=${emailAddress}`;
+              //`${window.frontendServerUrl}/EmailAddressVerificationNotice.html?accessToken=${accessToken}`;
           }
       }
     })

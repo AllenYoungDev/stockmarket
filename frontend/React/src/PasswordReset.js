@@ -3,7 +3,7 @@
 //import React, { StrictMode } from "react";
 //import { createRoot } from 'react-dom/client';
 
-import './utilities/ServerUrl.js';
+import './settings/ServerUrls.js';
 import { fetchResetPassword } from './utilities/fetchResetPassword.js';
 import { getEmailAddressAndAccessTokenInUrlParam } from './utilities/getEmailAddressAndAccessTokenInUrlParam.js';
 import { checkPasswordFormat } from './utilities/checkPasswordFormat.js';

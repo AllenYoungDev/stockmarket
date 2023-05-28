@@ -516,7 +516,8 @@ def _LaunchFrontendServer(frontendServerExecutionCommand, frontendServerProgramD
 
 if __name__ == '__main__':      
     if len(sys.argv) < 3:
-        sys.exit('At least two arguments required.  backendServerProgramDirectoryFullPath and frontendServerProgramDirectoryFullPath; launchServers is optional.')
+        print('At least two arguments required.  backendServerProgramDirectoryFullPath and frontendServerProgramDirectoryFullPath; launchServers is optional.')
+        sys.exit(1)
         
     backendServerProgramDirectoryFullPath = sys.argv[1]
     frontendServerProgramDirectoryFullPath = sys.argv[2]   

@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 import {fetchSendEmailAddressVerificationEmail} from "./fetchSendEmailAddressVerificationEmail.js";
 
@@ -18,9 +18,9 @@ window.SendEmailAddressVerificationEmail = function (event, emailAddress, access
     }
     
     if (emailAddress !== '') {
-      requestUrl = `${backendServerUrl}/SendEmailAddressVerificationEmail/null/${emailAddress}`;
+      requestUrl = `${window.backendServerUrl}/SendEmailAddressVerificationEmail/null/${emailAddress}`;
     } else {
-      requestUrl = `${backendServerUrl}/SendEmailAddressVerificationEmail/${accessToken}/null`;
+      requestUrl = `${window.backendServerUrl}/SendEmailAddressVerificationEmail/${accessToken}/null`;
     }
   
     console.log(`SendEmailAddressVerificationEmail() right before fetch() call.`)

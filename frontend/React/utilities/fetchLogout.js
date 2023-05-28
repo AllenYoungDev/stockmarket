@@ -1,4 +1,4 @@
-import './ServerUrl.js';
+import '../settings/ServerUrls.js';
 
 export function fetchLogout() {
     fetch(window.backendServerUrl + "/Logout", {method: "DELETE",credentials: 'include'})
