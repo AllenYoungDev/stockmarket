@@ -258,9 +258,9 @@ node {
 
     /*
     [5/26/2023 1:14 PM CST]
-    The deployment automation code below is currently untested, because of lacking access to my Linux computer
-    with Jenkins and Docker installed.  I'll have access to my Linux computer on 6/11/2023.
-    I'll test the below code as soon as I can.
+    The deployment automation code below is currently uncompleted and untested, because of lacking access to 
+    my Linux computer with Jenkins and Docker installed.  I'll have access to my Linux computer on 6/11/2023.
+    I'll complete and test the below code as soon as I can.
     */
     if (currentBuild.currentResult == 'SUCCESS') {
         stage('Deploy') {

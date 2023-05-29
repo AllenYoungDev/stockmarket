@@ -47,4 +47,4 @@ CREATE TABLE "transactions"(
 FOREIGN KEY("User primary key") REFERENCES "users"("Primary key"),
 FOREIGN KEY("Stock stats table entry primary key") REFERENCES "stock stats"("Primary key"));
 
-INSERT INTO "users" ("First name", "Last name", "Email address", "Email address verified", "Phone number", "Salt-hashed password", "Password salt", "Admin", "Access token") VALUES("Allen", "Young", "admin@allenyoung.dev", "true", "123-456-7890", "aaaaaabbbbbbcccccc", "111122223333", "true", "12345abcd");
+INSERT INTO "users" ("First name", "Last name", "Email address", "Email address verified", "Phone number", "Salt-hashed password", "Password salt", "Admin", "Access token") VALUES("Allen", "Young", "admin@allenyoung.dev", "true", "123-456-7890", "8576d498e70469a8dcf845250f1d20a299a4f6527da1aa666b7124261d7c60b1", "55cd9f3ecf8254b0a08b45378039b4cb5207dd4dad28d9d9d349ce34a4d9afe2", "true", "12345abcd");

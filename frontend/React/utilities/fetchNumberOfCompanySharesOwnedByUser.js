@@ -7,7 +7,7 @@ export function fetchNumberOfCompanySharesOwnedByUser(setResponseStatusBody, ign
 
     console.log('fetchNumberOfCompanySharesOwnedByUser() start.')
 
-    fetch(window.backendServerUrl + "/fetchNumberOfCompanySharesOwnedByUser", {method: "GET", credentials: 'include'})
+    fetch(window.backendServerUrl + "/GetNumberOfCompanySharesOwnedByUser", {method: "GET", credentials: 'include'})
     .then((response) => {responseStatus=response.status; return response.text();})
     .then((text) => {
       console.log(`fetchNumberOfCompanySharesOwnedByUser() responseStatus:  ${responseStatus}.`)

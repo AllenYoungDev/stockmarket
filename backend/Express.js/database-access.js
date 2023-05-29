@@ -416,7 +416,7 @@ If database access error, throw an error.
 	var callbackReturned = false
 	var errResult
 	var rowResult
-	const sqlCommand = `SELECT * FROM users WHERE "Email address" = '${userEmailAddress}';`
+	const sqlCommand = `SELECT * FROM users WHERE "Email address" = '${userEmailAddress}' COLLATE NOCASE;`
 	debug(`checkUserEmailAddressInDatabase() SQL command:  ${sqlCommand}`)
 	db.get(sqlCommand,
 		(err, row) => {
@@ -464,7 +464,7 @@ throw an error.
 
 	var callbackReturned = false
 	var errResult
-	const sqlCommand = `UPDATE users SET "Access token" = '${accessToken}' WHERE "Email address" = '${userEmailAddress}';`
+	const sqlCommand = `UPDATE users SET "Access token" = '${accessToken}' WHERE "Email address" = '${userEmailAddress}' COLLATE NOCASE;`
 	debug(`storeAccessTokenInUsersTable() SQL command:  ${sqlCommand}`)
 	db.run(sqlCommand,
 		function (err) { 
